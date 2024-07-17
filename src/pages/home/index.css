@@ -1,0 +1,6 @@
+.hero-banner {
+  background: url("../../asset/cmc_home_banner.png");
+  background-repeat: no-repeat;
+  min-height: 800px;
+  background-size: cover;
+}

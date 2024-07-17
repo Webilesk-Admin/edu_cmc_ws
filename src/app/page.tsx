@@ -1,9 +1,9 @@
-import Image from "next/image";
-
+import Header from "@/component/Header/header";
+import MainFile from "@/pages/home/index";
 export default function Home() {
   return (
     <div className="">
-      <p>App</p>
+      <MainFile />
     </div>
   );
 }
