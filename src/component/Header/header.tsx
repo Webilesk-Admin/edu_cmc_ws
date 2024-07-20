@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import logo from "@/asset/cmc_header_logo.png";
 import cartIcon from "@/asset/cmc_header_cart_icon.png";
+import $ from "jquery";
 const header = () => {
+  let [fixed, setFixed] = useState(false);
+  $(window).scroll(function () {
+    var onHeight = $(window).scrollTop();
+    // console.log(onHeight);
+    if (onHeight >= 100) {
+      setFixed(true);
+    } else {
+      setFixed(false);
+    }
+  });
   return (
-    <div className="home-contain position-relative  flex items center justify-center ">
-      <div className="fixed top-[40px] flex items center justify-center w-[100%] xl:w-[90%] ">
+    <div className="home-contain position-relative  flex items center justify-center w-[100%]  ">
+      <div
+        className={
+          fixed
+            ? "fixed top-[0px] flex items center justify-center w-[100%] xl:w-[90%] bg-[#ffffff] z-[55] min-w-[100%] p-[20px]"
+            : "fixed top-[0px] flex items center justify-center w-[100%] xl:w-[90%] min-w-[100%] p-[20px] "
+        }
+      >
         <div className="flex w-[90%] justify-between items-center">
           <Image src={logo} width={80} height={80} alt="Picture of the logo" />
 

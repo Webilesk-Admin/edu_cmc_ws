@@ -3,7 +3,6 @@ import { Jost } from "next/font/google";
 import "./globals.css";
 
 const inter = Jost({
-  
   preload: false,
 });
 

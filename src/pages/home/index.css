@@ -1,6 +1,93 @@
 .hero-banner {
+  min-height: 800px;
   background: url("../../asset/cmc_home_banner.png");
   background-repeat: no-repeat;
-  min-height: 800px;
   background-size: cover;
 }
+.home-third {
+  background: url("../../asset/cmc_home_third_back_img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.course-contain {
+  display: flex;
+  justify-content: space-between;
+}
+.home-fourth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animate-hanker {
+  animation: sway linear 3s infinite;
+}
+@keyframes sway {
+  0% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+.swiper-pagination-bullet-active {
+  background: #f9ab70;
+}
+.swiper-pagination-bullet {
+  height: 12px;
+  width: 12px;
+}
+
+.swiper-button-next {
+  min-width: 70px;
+  z-index: 7;
+  min-height: 70px;
+  top: 50%;
+  right: 0px;
+  border-radius: 20px;
+  position: absolute;
+  background-image: url("../../asset/cmc_home_third_course_btn.png");
+  background-size: contain;
+}
+#button-next-review {
+  min-width: 70px;
+  z-index: 7;
+  min-height: 70px;
+  top: 30%;
+  right: 0px;
+  border-radius: 20px;
+  position: absolute;
+  background-image: url("../../asset/cmc_home_third_course_btn.png");
+  background-size: contain;
+}
+.ninth-home {
+  /* background-image: url("../../asset/cmc_home_ninth_back_img.png"); */
+  /* height: 2100px; */
+  min-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* .mob-identify {
+  display: none;
+} */
+@media screen and (max-width: 980px) {
+  .course-contain {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .home-fourth {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+  }
+}
+/* @media screen and (max-width: 742px) {
+  .desk-identify {
+    display: none;
+  }
+  .mob-identify {
+    display: block;
+  }
+} */
