@@ -450,7 +450,7 @@ const Home = () => {
       </div>
       <div className="ninth-home   min-w-[100%]  relative ">
         <div className="xl:mt-[150px] xl:ml-[150px]  lg:mt-[120px] lg:ml-[70px] md:mt-[180px] md:ml-[30px] mb-[80px]  sticky top-[120px] ">
-          <p className="lg:text-[64px] text-[32px]  ml-[20px] mt-[20px] max-w-[150px] pt-[26px] md:pt-[0px] md:text-[44px] font-[700] md:leading-[76px] fix-content lg:max-w-[405px] md:max-w-[305px] text-[#ffffff]">
+          <p className="lg:text-[64px] text-[20px]  ml-[20px] mt-[20px] max-w-[100px] pt-[26px] md:pt-[0px] md:text-[44px] font-[700] md:leading-[76px] fix-content lg:max-w-[405px] md:max-w-[305px] text-[#ffffff]">
             <span className="text-[#F9AB70]">Navigate</span> with purpose, each
             challenge is a step towards{" "}
             <span className="text-[#F9AB70]">greatness </span>
