@@ -6,3 +6,31 @@
   margin: 0px;
   padding: 0px;
 }
+.course-ban {
+  background-image: url("../asset/cmc_course_banner_img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.login-form {
+  background-image: url("../asset/cmc_login_form_img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.glass-morph {
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.log-inp {
+  background: rgba(9, 84, 155, 0);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}

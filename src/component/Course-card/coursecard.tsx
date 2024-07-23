@@ -5,7 +5,7 @@ import "./style.css";
 const coursecard = () => {
   return (
     <div>
-      <div className="bg-[#f5f5f5] relative max-h-[534px] min-h-[534px] min-w-[376px] max-w-[376px] m-[20px]  flex flex-col items-center justify-start rounded-[25px] gap-[20px] p-[15px]">
+      <div className="bg-[#f5f5f5] relative max-h-[534px] min-h-[534px] min-w-[376px] max-w-[376px] md:m-[20px] basis-1/3 flex flex-col items-center justify-start rounded-[25px] gap-[20px] p-[15px]">
         <div className="image max-w-[336px] max-h-[160px] min-w-[336px] min-h-[160px] bg-[#D9D9D9] rounded-[10px]"></div>
         <div className="flex items-center justify-end min-w-[90%] ">
           <div className="w-[200px] h-[26px] bg-[#CFF4D9] flex items-center justify-center rounded-[6px] ">

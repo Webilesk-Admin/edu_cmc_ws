@@ -7,8 +7,9 @@ import { Pagination, Navigation } from "swiper/modules";
 
 import Image from "next/image";
 import bookButton from "@/asset/cmc_home_course_icon.png";
+import thirdStruct from "@/asset/cmc_home_third_struct.png";
 import searchButton from "@/asset/home_banner_coursesearch_icon.png";
-import absbanner from "@/asset/cmc_home_banner.png";
+import absbanner from "@/asset/cmc_home_banner_abs_struct.png";
 import secondLogo from "@/asset/cmc_home_second_logo.png";
 import rightArrow from "@/asset/cmc_home_secon_right_arrow_icon.png";
 import second_right from "@/asset/cmc_home_second_side_img.png";
@@ -47,18 +48,20 @@ const Home = () => {
     $(".ninth-home").css({
       height: `${footer}`,
     });
-  }, []);
-  useEffect(() => {});
-  $(window).resize(function () {
-    let getHeight = $(".abs_img").height();
-    $(".ninth-home").css({
-      height: `${getHeight}`,
-    });
   });
+  if (typeof window !== "undefined") {
+    $(window).on("resize", function () {
+      let getHeight = $(".abs_img").height();
+      $(".ninth-home").css({
+        height: `${getHeight}`,
+      });
+    });
+  }
+
   return (
-    <div className="home-parent w-full flex flex-col items-center justify-center ">
-      <Header />
-      <div className="hero-banner min-h-[860px]  flex flex-col items-center justify-center min-w-[100%] gap-[30px]">
+    <div className="home-parent w-[100%] flex flex-col items-center justify-center ">
+      <Header Color={"#fff"} />
+      <div className="hero-banner min-h-[860px]  flex flex-col items-center justify-center min-w-[100%] gap-[30px] relative">
         <h2 className="max-w-[544px] text-[#FFFFFF] text-[48px] font-[700] text-center">
           CMC Maritime Academy Chennai
         </h2>
@@ -75,20 +78,27 @@ const Home = () => {
           " THE BEST WAY TO PREDICT YOUR FUTURE IS TO CREATE IT JOIN WITH US TO
           CREATE YOUR FUTURE"
         </p>
-        <div className="max-w-[529px] w-[100%] h-[59px] relative ">
+        <div className="max-w-[693px] w-[100%] h-[59px] relative ">
           <input
             type="text"
-            className="w-[100%] h-[100%] rounded-[25px] outline-none px-[20px] lg:pr-[63px] text-[20px] text-[#868686] "
+            className="w-[100%] h-[100%] rounded-[25px] outline-none px-[20px] lg:pr-[110px] text-[20px] text-[#868686] "
           />
-          <div className="bg-[#F9AB70] h-[59px] flex rounded-r-[25px] items-center justify-center absolute right-[0px] top-[0px] w-[59px]">
+          <div className="bg-[#F9AB70] h-[59px] flex rounded-r-[25px] items-center justify-center absolute right-[0px] top-[0px] w-[98px]">
             <Image src={searchButton} width={32} height={32} alt="logo" />
           </div>
+        </div>
+        <div className="absolute bottom-[0px] left-[0px] min-w-[100%] hidden md:block">
+          <Image
+            src={absbanner}
+            alt="secLogo"
+            className="w-[70%] max-h-[116px] min-h-[116px]"
+          />
         </div>
       </div>
       <div className="home-second  min-h-[400px] relative min-w-[100%] flex items-start p-[10px] md:p-[0px] justify-center ">
         <div className="flex flex-col md:flex-row gap-[30px] justify-between items-center md:items-end p-[20px] min-w-[90%]">
           <div className="  left-[5%] top-[-70px] z-100 ">
-            <div className=" flex flex-col md:flex-row items-start  gap-[20px] ">
+            <div className=" flex flex-col md:flex-row items-start  gap-[30px] ">
               <Image src={secondLogo} width={120} height={120} alt="secLogo" />
               <div className="">
                 <p className="max-w-[374px] text-[36px] font-[700] leading-[42px] text-[#672013]">
@@ -121,12 +131,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="home-third min-h-[860px] min-w-[100%] mt-[20px] flex flex-col items-center justify-center gap-[60px] pb-[40px] ">
-        <div className="w-[269px] h-[57px] flex items-center  rounded-[18px] justify-center bg-[#ffffff] my-[20px] mt-[100px]">
-          <p className="font-[800] text-[#F9AB70] text-[36px]">We Excel in </p>
+      <div className="home-third min-h-[860px] min-w-[100%] mt-[20px] flex flex-col items-center justify-center gap-[60px] pb-[40px] relative ">
+        <div className="mt-[50px] md:mt-[150px] lg:mt-[0px] w-[269px] h-[57px] flex items-center  rounded-[18px] justify-center bg-[#ffffff] my-[20px] mt-[100px]">
+          <p className="  font-[800] text-[#F9AB70] text-[36px]">
+            We Excel in{" "}
+          </p>
         </div>
-        <div className="course-contain  mt-[20px] gap-[30px]  w-[100%] xl:w-[80%]">
-          <div className="w-[370px] h-[460px] md:h-[400px] flex  flex-col items-center justify-center">
+        <div className="course-contain  mt-[20px] xl:gap-[30px]  gap-[10px] flex  lg:flex-nowrap justify-center  w-[100%] xl:w-[80%]">
+          <div className="max-w-[360px] h-[460px] md:h-[400px] flex  flex-col items-center justify-center">
             <div className="relative">
               <Image
                 src={thirdCourseOne}
@@ -178,6 +190,13 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <div className="absolute top-[0px] right-[0px] w-[80%] lg:max-w-[75%] hidden md:block flex justify-center ">
+          <Image
+            src={thirdStruct}
+            alt="secLogo"
+            className="w-[100%] max-h-[116px] min-h-[116px]"
+          />
+        </div>
       </div>
       <div className="home-fourth  min-w-[95%] xl:min-w-[70%] min-h-[860px] xl:gap-[40px]">
         <div className="fourth-img relative mb-[100px] lg:mb-[0px]">
@@ -188,7 +207,7 @@ const Home = () => {
             className="animate-hanker absolute bottom-[-120px]"
           />
         </div>
-        <div className="fourth-content p-[10px] md:p-[0px]">
+        <div className="fourth-content p-[20px] md:p-[0px]">
           <p className="text-[24px] font-[700] mb-[20px]">WHY CHOOSE US</p>
           <div className="leading-[48px]">
             <p className="text-[40px] font-[700]">Here Is What</p>
@@ -479,13 +498,7 @@ const Home = () => {
           className="mt-[30px] xl:ml-[40px] md:hidden  mob-identify"
         />
       </div>
-      {/* <div className="absolute top-[0px]  z-[-2]">
-        <Image
-          src={absbanner}
-          alt="secLogo"
-          className="object-cover lg: min-w-[100%] min-h-[800px] max-h-[800px]"
-        />
-      </div> */}
+
       <Footer />
     </div>
   );

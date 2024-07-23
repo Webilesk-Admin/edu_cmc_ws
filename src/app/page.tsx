@@ -1,11 +1,15 @@
-import Header from "@/component/Header/header";
-import MainFile from "@/pages/home/index";
-import ReviewCard from "@/component/review-card/reviewCard";
+"use client";
+import MainFile from "@/app/home/index";
+import { CourseCard } from "@/component";
+import LoginForm from "./login-form/page";
+import { NextUIProvider } from "@nextui-org/system";
 export default function Home() {
   return (
-    <div className="">
-      <MainFile />
-      {/* <ReviewCard /> */}
-    </div>
+    <NextUIProvider>
+      <div className="">
+        {/* <MainFile /> */}
+        <LoginForm />
+      </div>
+    </NextUIProvider>
   );
 }

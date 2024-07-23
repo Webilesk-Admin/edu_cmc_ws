@@ -7,15 +7,16 @@ import fbIcon from "@/asset/cmc_footer_facebook_icon.png";
 import linkedInIcon from "@/asset/cmc_footer_linkedin_icon.png";
 import telephoneIcon from "@/asset/cmc_footer_telephone_icon.png";
 import mobileIcon from "@/asset/cmc_footer_mobile_icon.png";
+import FooterStruct from "@/asset/cmc_footer_abs_struct.png";
 import "./style.css";
 const footer = () => {
   return (
     <div className=" w-[100%] relative">
-      <div className="footer-contain min-h-[561px] w-[100%] mt-[30px] flex e items-center justify-center md:py-[0px] py-[30px]">
+      <div className="footer-contain min-h-[561px]  w-[100%] mt-[30px] flex e items-center justify-center md:py-[0px] py-[30px]">
         <div className="flex md:items-end justify-between xl:w-[80%] md:w-[90%]  w-[100%] flex-col-reverse items-center md:flex-row ">
           <div className="flex justify-between md:min-w-[50%] md:max-w-[50%] w-[80%] mt-[40px] flex-col md:flex-row mb-[70px] static md:absolute bottom-[30px]">
             <div className=" text-center mb-[10px]">
-              <p className="text-[20px] font-[500] text-[#ffffff] mb-[40px] ">
+              <p className="text-[20px] font-[500] text-[#ffffff] md:mb-[40px] ">
                 Useful links
               </p>
               <p className="text-[16px] font-[400] text-[#ffffff]">Home</p>
@@ -28,8 +29,8 @@ const footer = () => {
                 Student Login
               </p>
             </div>
-            <div className=" text-center mb-[10px]">
-              <p className="text-[20px] font-[500] text-[#ffffff] mb-[40px]">
+            <div className=" text-center mb-[10px] mb-[20px]">
+              <p className="text-[20px] font-[500] text-[#ffffff] md:mb-[40px]">
                 Courses
               </p>
 
@@ -50,7 +51,7 @@ const footer = () => {
               </p>
             </div>
             <div className=" text-center mb-[10px]">
-              <p className="text-[20px] font-[500] text-[#ffffff] mb-[40px]">
+              <p className="text-[20px] font-[500] text-[#ffffff] md:mb-[40px]">
                 Address
               </p>
               <p className="text-[16px] font-[400] text-[#ffffff]">Home</p>
@@ -64,7 +65,7 @@ const footer = () => {
               </p>
             </div>
           </div>
-          <div className="min-w-[360px] max-w-[380px] gap-[20px] flex items-start md:items-center static justify-center flex-col md:text-center md:absolute top-[30px] right-[10px] xl:right-[100px] ">
+          <div className="max-w-[90%] min-w-[360px] md:max-w-[380px] gap-[20px] flex items-center md:items-center static justify-center flex-col text-center md:absolute top-[30px] right-[10px] xl:right-[100px] ">
             <Image src={footerLogo} alt="" />
             <p className="text-[24px] font-[600] text-[#ffffff]">
               CMC Maritime Academy
@@ -116,13 +117,20 @@ const footer = () => {
             </div>
           </div>
         </div>
-        <div className="absolute flex flex-col md:flex-row justify-center items-center gap-[10px] md:justify-between bottom-[15px] w-[80%] xl:w-[80%]">
+        <div className="absolute flex flex-col md:flex-row justify-center items-center gap-[10px] md:justify-between bottom-[15px] md:w-[80%] sm:w-[100%]  xl:w-[80%]">
           <p className="text-[16px] font-[400] text-[#ffffff] ">
             Copyright © 2024 CMC All Rights Reserved
           </p>
           <p className="text-[18px] font-[400] text-[#ffffff] ">
             Powered By Webilesk
           </p>
+        </div>
+        <div className="absolute top-[0px] left-[0px] min-w-[100%] hidden md:block ">
+          <Image
+            src={FooterStruct}
+            alt="secLogo"
+            className="w-[70%] max-h-[116px] min-h-[116px] xl:w-[78%]"
+          />
         </div>
       </div>
     </div>

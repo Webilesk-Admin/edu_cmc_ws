@@ -1,8 +1,10 @@
 .hero-banner {
   min-height: 800px;
   background: url("../../asset/cmc_home_banner.png");
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
 }
 .home-third {
   background: url("../../asset/cmc_home_third_back_img.png");
