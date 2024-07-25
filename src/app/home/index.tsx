@@ -60,7 +60,7 @@ const Home = () => {
 
   return (
     <div className="home-parent w-[100%] flex flex-col items-center justify-center ">
-      <Header Color={"#fff"} />
+      <Header Color={"#fff"} ActiveLink={"1"} />
       <div className="hero-banner min-h-[860px]  flex flex-col items-center justify-center min-w-[100%] gap-[30px] relative">
         <h2 className="max-w-[544px] text-[#FFFFFF] text-[48px] font-[700] text-center">
           CMC Maritime Academy Chennai

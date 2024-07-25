@@ -12,7 +12,11 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/components/(button|snippet|code|input).js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        box: " 4px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+      },
+    },
   },
   plugins: [],
 };

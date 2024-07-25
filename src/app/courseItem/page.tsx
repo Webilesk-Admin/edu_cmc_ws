@@ -15,7 +15,7 @@ const page = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center">
-        <Header Color={"#7E7E7E"} />
+        <Header Color={"#7E7E7E"} ActiveLink={"2"} />
         <div className="min-h-[169px] bg-[#fbcba6] min-w-[100%] mt-[68px] md:mt-[80px]  flex items-center justify-center p-[10px] md:p-[0px] course-ban">
           <div className=" min-w-[80%]">
             <p className="text-[26px] max-w-[478px] font-[600]">

@@ -8,7 +8,8 @@ import cartIconBlack from "@/asset/cmc_header_cart_icon_black.png";
 import $ from "jquery";
 import "./header.css";
 import Link from "next/link";
-const header = ({ Color }) => {
+import { number } from "zod";
+const header = ({ Color, ActiveLink }) => {
   let [fixed, setFixed] = useState(false);
 
   $(window).scroll(function () {
@@ -22,7 +23,9 @@ const header = ({ Color }) => {
   });
 
   let color: string = Color;
-  console.log(color, fixed);
+  let activeLink: number = ActiveLink;
+
+  // console.log(color, fixed);
 
   return (
     <>
@@ -33,13 +36,14 @@ const header = ({ Color }) => {
           }`}
         >
           <div className="flex w-[100%] absolute top-[15px] lg:w-[90%] justify-between items-center">
-            <Image
-              src={logo}
-              width={80}
-              height={80}
-              alt="Picture of the logo mt-[16px]"
-            />
-
+            <Link href="/">
+              <Image
+                src={logo}
+                width={80}
+                height={80}
+                alt="Picture of the logo mt-[16px]"
+              />
+            </Link>
             <div
               className={
                 fixed
@@ -48,16 +52,49 @@ const header = ({ Color }) => {
               }
             >
               <Link href="/">
-                <p className={`cursor-pointer`}>Home</p>
+                <p
+                  className={`cursor-pointer ${
+                    activeLink == 1 ? "text-[#F9AB70]" : ""
+                  }`}
+                >
+                  Home
+                </p>
               </Link>
               <Link href="/courseCategory">
-                <p className="cursor-pointer">Courses</p>
+                <p
+                  className={`cursor-pointer ${
+                    activeLink == 2 ? "text-[#F9AB70]" : ""
+                  }`}
+                >
+                  Courses
+                </p>
               </Link>
-              <a className="cursor-pointer">About us</a>
-              <a className="cursor-pointer">Testimonials</a>
-              <a className="">Contact</a>
+              <Link href="/about">
+                <p
+                  className={`cursor-pointer ${
+                    activeLink == 3 ? "text-[#F9AB70]" : ""
+                  }`}
+                >
+                  About us
+                </p>
+              </Link>
+              <Link href="/testimonial-public">
+                <p
+                  className={`cursor-pointer ${
+                    activeLink == 4 ? "text-[#F9AB70]" : ""
+                  }`}
+                >
+                  Testimonials
+                </p>
+              </Link>
+              <a
+                className={`cursor-pointer ${
+                  activeLink == 5 ? "text-[#F9AB70]" : ""
+                }`}
+              >
+                Contact
+              </a>
             </div>
-
             <div className="flex items-center justify-center gap-[20px]">
               {/* <a className="cursor-pointer text-[20px] font-[700] text-[#F9AB70]">
                 Ahoy! Steve Roggers
