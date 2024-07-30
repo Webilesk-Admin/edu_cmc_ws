@@ -43,8 +43,8 @@ const ProfileForm = () => {
   let [check, setCheck] = useState<string>("");
   let [showCpassword, setShowCpassword] = useState<boolean>(false);
   let [showPassword, setShowPassword] = useState<boolean>(false);
-  const [date, setDate] = useState<Date>();
-  console.log((new Date(date)).getTime());
+  const [date, setDate] = useState<Date | undefined>(undefined);
+  console.log(new Date(date).getTime());
 
   const showCpass = () => {
     setShowCpassword(!showCpassword);
@@ -88,6 +88,7 @@ const ProfileForm = () => {
       .string()
       .min(1, { message: "Enter WhatsApp Number" })
       .regex(mobileRegex, { message: "Invalid WhatsApp Number" }),
+    date: z.string().nonempty("Date of Birth is required"),
   });
 
   const form = useForm<z.infer<typeof formScehma>>({
@@ -96,6 +97,7 @@ const ProfileForm = () => {
       name: "",
       indosNumber: "",
       email: "",
+      date: "",
       mobile_number: "",
       whats_number: "",
       password: "",
@@ -114,8 +116,8 @@ const ProfileForm = () => {
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem className="relative w-[90%] md:w-[234px]">
-                  <FormLabel className="absolute text-[#fff] top-[-8px] bg-[#F9AB70] rounded-[8px]  py-[2px] px-[8px] z-[336] text-[14px] font-light left-[25px]">
+                <FormItem className="relative w-[90%] md:w-[234px] h-[61px]">
+                  <FormLabel className="absolute text-[#fff] top-[-2px] bg-[#F9AB70] w-[44px] h-[17px] rounded-[8px] flex items-center justify-center py-[2px] px-[8px] z-[336] text-[12px] font-light left-[18px]">
                     Name
                   </FormLabel>
                   <FormControl>
@@ -138,7 +140,7 @@ const ProfileForm = () => {
               name="indosNumber"
               render={({ field }) => (
                 <FormItem className="relative w-[90%] md:w-[234px]">
-                  <FormLabel className="absolute text-[#fff] top-[-8px] bg-[#F9AB70] rounded-[8px]  py-[2px] px-[8px] z-[336] text-[14px] font-light left-[25px]">
+                  <FormLabel className="absolute text-[#fff] top-[-2px] bg-[#F9AB70] rounded-[8px]  w-[88px] h-[17px] flex items-center justify-center z-[336] text-[12px] font-light left-[18px]">
                     INDoS Number
                   </FormLabel>
                   <FormControl>
@@ -152,7 +154,7 @@ const ProfileForm = () => {
                     />
                   </FormControl>
                   {/* <FormDescription>Nmae</FormDescription> */}
-                  <FormMessage className="absolute text-[#FF3131] font-[600] text-[12px] bottom-[-20px] left-[20px]" />
+                  <FormMessage className="absolute text-[#D32828] font-[600] text-[12px] bottom-[-20px] left-[20px]" />
                 </FormItem>
               )}
             />
@@ -199,46 +201,46 @@ const ProfileForm = () => {
                 name="date"
                 render={({ field }) => (
                   <FormItem className="relative w-[90%] md:w-[100%]">
-                    <FormLabel className="absolute text-[#fff] top-[-10px] bg-[#F9AB70] rounded-[8px]  py-[1px] px-[8px] z-[336] text-[14px] font-light left-[25px]">
+                    <FormLabel className="absolute text-[#fff] top-[-9px] bg-[#F9AB70] rounded-[8px]  w-[43px] h-[17px] flex items-center justify-center z-[336] text-[12px] font-light left-[18px]">
                       Date
                     </FormLabel>
                     <FormControl>
-                      {/* <Input
-                        placeholder="Date"
+                      {/* <Popover>
+                        <PopoverTrigger asChild className="bg-[#fff]">
+                          <Button
+                            variant={"outline"}
+                            className={cn(
+                              "w-[100%] md:w-[199px] justify-start focus:ring-0 uppercase min-h-[48px] rounded-[50px] outline-none p-[10px] px-[20px] text-[#ffffff] text-[18px] font-[400] log-inp",
+                              !date && "text-muted-foreground"
+                            )}
+                          >
+                            {date ? (
+                              format(date, "d/M/y")
+                            ) : (
+                              <span className="text-[#949daa] text-[18px] font-[400] absolute top-[10px] left-[30px]">
+                                date
+                              </span>
+                            )}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0 bg-[#fff]">
+                          <Calendar
+                            mode="single"
+                            selected={date}
+                            onSelect={setDate}
+                            initialFocus
+                          />
+                        </PopoverContent>
+                      </Popover> */}
+                      <Input
+                        placeholder="date"
                         {...field}
-                        type="text"
+                        type="date"
+                        maxLength={20}
+                        className=" w-[100%]  md:w-[234px] focus:ring-0 uppercase lg:min-w-[234px] min-h-[48px] rounded-[20px] outline-none p-[10px] px-[20px] text-[#ffffff] text-[18px] font-[400] log-inp"
                         style={{ outline: "none", boxShadow: "none" }}
-                        className="w-[100%] md:w-[199px]   focus:ring-0 uppercase min-h-[48px] rounded-[50px] outline-none p-[10px] px-[20px] text-[#ffffff] text-[18px] font-[400] log-inp"
-                      /> */}
+                      />
                     </FormControl>
-                    <Popover>
-                      <PopoverTrigger asChild className="bg-[#fff]">
-                        <Button
-                          variant={"outline"}
-                          className={cn(
-                            "w-[100%] md:w-[199px]  justify-start focus:ring-0 uppercase min-h-[48px] rounded-[50px] outline-none p-[10px] px-[20px] text-[#ffffff] text-[18px] font-[400] log-inp",
-                            !date && "text-muted-foreground"
-                          )}
-                        >
-                          {date ? (
-                            format(date, "d/M/Y")
-                          ) : (
-                            <span className="text-[#949daa] text-[18px] font-[400] absolute top-[10px] left-[30px]">
-                              date
-                            </span>
-                          )}
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0  bg-[#fff]">
-                        <Calendar
-                          mode="single"
-                          selected={date}
-                          onSelect={setDate}
-                          initialFocus
-                        />
-                      </PopoverContent>
-                    </Popover>
-                    {/* <FormDescription>Nmae</FormDescription> */}
                     <FormMessage className="absolute text-[#FF3131] font-[600] text-[12px] bottom-[-20px] left-[20px]" />
                     <Image
                       src={SignupIcon}
@@ -256,8 +258,8 @@ const ProfileForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem className="relative w-[90%] md:w-[100%]">
-                  <FormLabel className="absolute text-[#fff] top-[-6px] bg-[#F9AB70] rounded-[8px]  py-[1px] px-[8px] z-[336] text-[14px] font-light left-[25px]">
-                    E-mail
+                  <FormLabel className="absolute text-[#fff] top-[-2px] bg-[#F9AB70] rounded-[8px]  w-[43px] h-[17px] flex items-center justify-center z-[336] text-[12px] font-light left-[18px]">
+                    E-Mail
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -274,61 +276,13 @@ const ProfileForm = () => {
               )}
             />
           </div>
-          <div className=" flex flex-col md:flex-row gap-[40px]  md:gap-[20px]">
-            <FormField
-              control={form.control}
-              name="mobile_number"
-              render={({ field }) => (
-                <FormItem className="relative w-[90%] md:w-[234px]">
-                  <FormLabel className="absolute text-[#fff] top-[-8px] bg-[#F9AB70] rounded-[8px]  py-[2px] px-[8px] z-[336] text-[14px] font-light left-[25px]">
-                    Mobile Number
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Mobile Number"
-                      {...field}
-                      type="text"
-                      maxLength={10}
-                      style={{ outline: "none", boxShadow: "none" }}
-                      className="  w-[100%] md:w-[234px] focus:ring-0 uppercase  min-h-[48px] rounded-[50px] outline-none p-[10px] px-[20px] text-[#ffffff] text-[18px] font-[400] log-inp"
-                    />
-                  </FormControl>
-                  {/* <FormDescription>Nmae</FormDescription> */}
-                  <FormMessage className="absolute text-[#FF3131] font-[600] text-[12px] bottom-[-20px] left-[20px]" />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="whats_number"
-              render={({ field }) => (
-                <FormItem className="relative w-[90%] md:w-[100%]">
-                  <FormLabel className="absolute text-[#fff] top-[-8px] bg-[#F9AB70] rounded-[8px]  py-[2px] px-[8px] z-[336] text-[14px] font-light left-[25px]">
-                    WhatApp Number
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="What`s Number"
-                      {...field}
-                      type="text"
-                      maxLength={10}
-                      style={{ outline: "none", boxShadow: "none" }}
-                      className="w-[100%] md:w-[234px]   focus:ring-0 uppercase min-h-[48px] rounded-[50px] outline-none p-[10px] px-[20px] text-[#ffffff] text-[18px] font-[400] log-inp"
-                    />
-                  </FormControl>
-                  {/* <FormDescription>Nmae</FormDescription> */}
-                  <FormMessage className="absolute text-[#FF3131] font-[600] text-[12px] bottom-[-20px] left-[20px]" />
-                </FormItem>
-              )}
-            />
-          </div>
           <div className="flex flex-col md:flex-row gap-[40px] gap-[40px] md:gap-[20px]">
             <FormField
               control={form.control}
               name="password"
               render={({ field }) => (
                 <FormItem className="relative w-[90%] md:w-[234px]">
-                  <FormLabel className="absolute text-[#fff] top-[-8px] bg-[#F9AB70] rounded-[8px]  py-[2px] px-[8px] z-[336] text-[14px] font-light left-[25px]">
+                  <FormLabel className="absolute text-[#fff] top-[-2px] bg-[#F9AB70] rounded-[8px]  w-[65px] h-[17px] flex items-center justify-center z-[336] text-[12px] font-light left-[18px]">
                     Password
                   </FormLabel>
                   <FormControl>
@@ -358,7 +312,7 @@ const ProfileForm = () => {
               name="confirm_password"
               render={({ field }) => (
                 <FormItem className="relative w-[90%] md:w-[234px]">
-                  <FormLabel className="absolute text-[#fff] top-[-8px] bg-[#F9AB70] rounded-[8px]  py-[2px] px-[8px] z-[336] text-[14px] font-light left-[25px]">
+                  <FormLabel className="absolute text-[#fff] top-[-2px] bg-[#F9AB70] rounded-[8px]  w-[110px] h-[17px] flex items-center justify-center z-[336] text-[12px] font-light left-[18px]">
                     Confirm Password
                   </FormLabel>
                   <FormControl>
@@ -384,6 +338,55 @@ const ProfileForm = () => {
               )}
             />
           </div>
+          <div className=" flex flex-col md:flex-row gap-[40px]  md:gap-[20px]">
+            <FormField
+              control={form.control}
+              name="mobile_number"
+              render={({ field }) => (
+                <FormItem className="relative w-[90%] md:w-[234px]">
+                  <FormLabel className="absolute text-[#fff] top-[-2px] bg-[#F9AB70] rounded-[8px]  w-[92px] h-[17px] flex items-center justify-center z-[336] text-[12px] font-light left-[18px]">
+                    Mobile Number
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Mobile Number"
+                      {...field}
+                      type="text"
+                      maxLength={10}
+                      style={{ outline: "none", boxShadow: "none" }}
+                      className="  w-[100%] md:w-[234px] focus:ring-0 uppercase  min-h-[48px] rounded-[50px] outline-none p-[10px] px-[20px] text-[#ffffff] text-[18px] font-[400] log-inp"
+                    />
+                  </FormControl>
+                  {/* <FormDescription>Nmae</FormDescription> */}
+                  <FormMessage className="absolute text-[#FF3131] font-[600] text-[12px] bottom-[-20px] left-[20px]" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="whats_number"
+              render={({ field }) => (
+                <FormItem className="relative w-[90%] md:w-[100%]">
+                  <FormLabel className="absolute text-[#fff] top-[-2px] bg-[#F9AB70] rounded-[8px]  w-[99px] h-[17px] flex items-center justify-center z-[336] text-[12px] font-light left-[18px]">
+                    WhatApp Number
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="What`s Number"
+                      {...field}
+                      type="text"
+                      maxLength={10}
+                      style={{ outline: "none", boxShadow: "none" }}
+                      className="w-[100%] md:w-[234px]   focus:ring-0 uppercase min-h-[48px] rounded-[50px] outline-none p-[10px] px-[20px] text-[#ffffff] text-[18px] font-[400] log-inp"
+                    />
+                  </FormControl>
+                  {/* <FormDescription>Nmae</FormDescription> */}
+                  <FormMessage className="absolute text-[#FF3131] font-[600] text-[12px] bottom-[-20px] left-[20px]" />
+                </FormItem>
+              )}
+            />
+          </div>
+
           <div className="flex items-center justify-center flex-col gap-[0px]">
             <button
               type="submit"

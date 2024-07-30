@@ -1,0 +1,42 @@
+/* .ant-table-thead .ant-table-cell {
+  border: 1px dashed #000 !important;
+}
+.tableCell {
+  border: 1px dashed #000 !important;
+} */
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  max-width: 180px;
+  /* text-align: center; */
+  font-size: 14px;
+  font-weight: 500 !important;
+  color: #672013 !important;
+  padding: 10px;
+}
+.ant-pagination-item-active {
+  border: 2px solid #672013 !important;
+}
+.ant-pagination-item-active a {
+  color: #672013 !important;
+}
+.ant-table-column-title {
+  font-size: 14px;
+  color: #7e7e7e;
+  text-align: center;
+  font-weight: 400;
+}
+.ant-table-column-sort {
+  background: #fff !important;
+}
+.ant-table-thead > tr > th {
+  border-bottom: 1px dashed #7e7e7e !important;
+  padding-bottom: 20px;
+  text-align: center !important;
+  font-size: 14px;
+  color: #49454fcc;
+}
+.success {
+  color: green !important;
+}
+.error {
+  color: red !important;
+}

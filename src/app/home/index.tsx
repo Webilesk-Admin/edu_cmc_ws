@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper/modules";
-
+import { ContainerScroll } from "../../components/ui/container-scroll-animation";
 import Image from "next/image";
 import bookButton from "@/asset/cmc_home_course_icon.png";
 import thirdStruct from "@/asset/cmc_home_third_struct.png";
@@ -65,7 +65,7 @@ const Home = () => {
         <h2 className="max-w-[544px] text-[#FFFFFF] text-[48px] font-[700] text-center">
           CMC Maritime Academy Chennai
         </h2>
-        <div className="min-w-[208px] max-w-[208px] h-[39px] flex rounded-[8px] items-center justify-center bg-[#F9AB70] gap-[10px]">
+        <div className="min-w-[208px] max-w-[208px] h-[39px] flex rounded-[8px] items-center justify-center bg-[#F9AB70] gap-[10px] cursor-pointer">
           <p className="text-[#ffffff] font-[600] jque">Book Your Course</p>
           <Image
             src={bookButton}
@@ -344,7 +344,7 @@ const Home = () => {
           }}
           navigation={true}
           modules={[Pagination, Navigation]}
-          className="mySwiper h-[630px]"
+          className="mySwiper h-[690px]"
           breakpoints={{
             320: {
               slidesPerView: 1,

@@ -8,6 +8,12 @@ import AboutSecond from "@/asset/cmc_about_second_img.png";
 import AboutThird from "@/asset/cmc_about_third_img.png";
 import AboutFourth from "@/asset/cmc_about_fourth_img.png";
 import BulletIcon from "@/asset/cmc_about_icon_bullet.png";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "About for CMC",
+};
 const page = () => {
   return (
     <>
@@ -63,7 +69,11 @@ const page = () => {
             <div className="space-y-[20px]">
               <p className="text-[40px] text-[#F9AB70] font-[800]">Objective</p>
               <div className=" flex gap-[10px] items-start">
-                <Image src={BulletIcon} alt="" className="mt-[10px]" />
+                <Image
+                  src={BulletIcon}
+                  alt=""
+                  className="min-w-[28px] min-h-[26px] mt-[4px] object-contain"
+                />
                 <p className="text-[20px] text-[#672013] font-[600] leading-[31px] max-w-[887px] xl:min-w-[887px] xl:max-w-[887px]">
                   Our objective is to impart our student's community with
                   knowledge skills along with marine culture by way of
@@ -71,7 +81,11 @@ const page = () => {
                 </p>
               </div>
               <div className=" flex gap-[10px] items-start">
-                <Image src={BulletIcon} alt="" className="mt-[10px]" />
+                <Image
+                  src={BulletIcon}
+                  alt=""
+                  className="min-w-[28px] min-h-[26px] mt-[4px] object-contain"
+                />
                 <p className="text-[20px] text-[#672013] font-[600] leading-[31px] max-w-[887px] xl:min-w-[887px] xl:max-w-[887px]">
                   To impart quality training to sailing seafarers and those
                   aspiring for a career at sea in line with the Directorate
@@ -99,7 +113,11 @@ const page = () => {
             <div className="space-y-[20px]">
               <p className="text-[40px] text-[#F9AB70] font-[800]">Mission</p>
               <div className=" flex gap-[10px] items-start">
-                <Image src={BulletIcon} alt="" className="mt-[10px]" />
+                <Image
+                  src={BulletIcon}
+                  alt=""
+                  className="min-w-[28px] min-h-[26px] mt-[4px] object-contain"
+                />
                 <p className="text-[20px] text-[#672013] font-[600] leading-[31px] max-w-[887px] xl:min-w-[887px] xl:max-w-[887px]">
                   To provide goal-oriented, quality-based and value-added
                   education through state-of-the-art technology at par with
@@ -107,20 +125,32 @@ const page = () => {
                 </p>
               </div>
               <div className=" flex gap-[10px] items-start">
-                <Image src={BulletIcon} alt="" className="mt-[10px]" />
+                <Image
+                  src={BulletIcon}
+                  alt=""
+                  className="min-w-[28px] min-h-[26px] mt-[4px] object-contain"
+                />
                 <p className="text-[20px] text-[#672013] font-[600] leading-[31px] max-w-[887px] xl:min-w-[887px] xl:max-w-[887px]">
                   To prepare the students with high professional skills and
                   ethical values.
                 </p>
               </div>
               <div className=" flex gap-[10px] items-start">
-                <Image src={BulletIcon} alt="" className="mt-[10px]" />
+                <Image
+                  src={BulletIcon}
+                  alt=""
+                  className="min-w-[28px] min-h-[26px] mt-[4px] object-contain"
+                />
                 <p className="text-[20px] text-[#672013] font-[600] leading-[31px] max-w-[887px] xl:min-w-[887px] xl:max-w-[887px]">
                   To impart knowledge through best practices.
                 </p>
               </div>
               <div className=" flex gap-[10px] items-start">
-                <Image src={BulletIcon} alt="" className="mt-[10px]" />
+                <Image
+                  src={BulletIcon}
+                  alt=""
+                  className="min-w-[28px] min-h-[26px] mt-[4px] object-contain"
+                />
                 <p className="text-[20px] text-[#672013] font-[600] leading-[31px] max-w-[887px] xl:min-w-[887px] xl:max-w-[887px]">
                   To undertake continuous assessment and remedial measures
                 </p>
@@ -131,7 +161,11 @@ const page = () => {
             <div className="space-y-[20px]">
               <p className="text-[40px] text-[#F9AB70] font-[800]">Vision</p>
               <div className=" flex gap-[10px] items-start">
-                <Image src={BulletIcon} alt="" className="mt-[10px]" />
+                <Image
+                  src={BulletIcon}
+                  alt=""
+                  className="min-w-[28px] min-h-[26px] mt-[4px] object-contain"
+                />
                 <p className="text-[20px] text-[#672013] font-[600] leading-[31px] max-w-[887px] xl:min-w-[887px] xl:max-w-[887px]">
                   We ensure a pleasant and happy family environment in our
                   college campus with our professional with harmonious approach
@@ -139,7 +173,11 @@ const page = () => {
                 </p>
               </div>
               <div className=" flex gap-[10px] items-start">
-                <Image src={BulletIcon} alt="" className="mt-[10px]" />
+                <Image
+                  src={BulletIcon}
+                  alt=""
+                  className="min-w-[28px] min-h-[26px] mt-[4px] object-contain"
+                />
                 <p className="text-[20px] text-[#672013] font-[600] leading-[31px] max-w-[887px] xl:min-w-[887px] xl:max-w-[887px]">
                   Forge partnerships with government agencies, NGOs, industry
                   leaders, and local communities to leverage collective
@@ -147,7 +185,11 @@ const page = () => {
                 </p>
               </div>
               <div className=" flex gap-[10px] items-start">
-                <Image src={BulletIcon} alt="" className="mt-[10px]" />
+                <Image
+                  src={BulletIcon}
+                  alt=""
+                  className="min-w-[28px] min-h-[26px] mt-[4px] object-contain"
+                />
                 <p className="text-[20px] text-[#672013] font-[600] leading-[31px] max-w-[887px] xl:min-w-[887px] xl:max-w-[887px]">
                   We aim for 100% successful trainees in all qualifying
                   examinations.

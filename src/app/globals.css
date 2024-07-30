@@ -36,5 +36,89 @@
 .log-inp:focus {
   border: 2px solid #f9ab70;
 }
- 
+.waterEffect {
+  background: url("../asset/cmc_contact_watereffect.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.scroll-side {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.scroll-side::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.ant-select-selector {
+  box-shadow: none;
+}
+.ant-select-selector {
+  box-shadow: none !important;
+}
+.ant-picker-input input {
+  font-size: 20px !important;
+  font-weight: 500;
+}
+.pymt-first {
+  /* background: url(".././asset/cm_dashboard_pymt_first_table.png"); */
+  height: 100%;
+  background: transparent;
+  min-height: 387px;
+  /* max-height: 387px; */
+  /* background-position: center; */
+}
+.pymt-table::-webkit-scrollbar {
+  height: 8px;
+  cursor: pointer;
+}
 
+.pymt-table::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #672013;
+  max-width: 15px;
+  position: absolute;
+  top: 0px;
+}
+.pymt-table {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+/* WebKit browsers (Chrome, Safari, Edge) */
+.pymt-table::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.pymt-table::-webkit-scrollbar-thumb {
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+  background: #672013; /* Color of the scrollbar thumb */
+}
+
+.pymt-table::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Firefox */
+.pymt-table {
+  scrollbar-width: thin; /* Set scrollbar to thin */
+  scrollbar-color: #672013 #f1f1f1; /* Thumb color and track color */
+}
+
+/* Edge (specific styles) */
+@supports (-ms-overflow-style: scrollbar) {
+  .pymt-table {
+    -ms-overflow-style: auto; /* Use auto for Edge */
+  }
+}
+
+.pymt-table {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 400px; /* Set a max height for the table */
+}
+@media screen and (min-width: 1260px) {
+  .pymt-table {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+}

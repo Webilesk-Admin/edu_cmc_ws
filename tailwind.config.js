@@ -1,4 +1,7 @@
-const { nextui } = require("@nextui-org/theme");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -11,12 +14,26 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/components/button.js",
     "./node_modules/@nextui-org/theme/dist/components/(button|snippet|code|input).js",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       boxShadow: {
         box: " 4px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+        contact: "0px 2px 2px 0px #0000002E",
+        header: "0px 2px 1.9px 0px #00000045;",
+        course: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
       },
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
 };
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

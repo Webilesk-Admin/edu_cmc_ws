@@ -4,3 +4,5 @@ export { default as ReviewCard } from "./review-card/reviewCard";
 export { default as Footer } from "./Footer/footer";
 export { default as CourseCategory } from "./CategoryCard/categoryCard";
 export { default as TestimonialCard } from "./TestimonialCard/testimonialCard";
+export { default as DashboardComp } from "./DashboardComp/page";
+export { default as CartItemCard } from "./CartItemCard/page";

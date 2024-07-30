@@ -59,7 +59,7 @@ const ProfileForm = () => {
             name="indosNumber"
             render={({ field }) => (
               <FormItem className="relative">
-                <FormLabel className="absolute text-[#fff] top-[-8px] bg-[#F9AB70] rounded-[8px]  py-[2px] px-[8px] z-[336] text-[14px] font-light left-[25px]">
+                <FormLabel className="absolute text-[#fff] w-[88px] h-[17px] flex justify-center items-center top-[-6px] bg-[#F9AB70] rounded-[8px]  py-[2px] px-[8px] z-[336] text-[14px] font-light left-[25px]">
                   IndosNumber
                 </FormLabel>
                 <FormControl>

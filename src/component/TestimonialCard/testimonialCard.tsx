@@ -20,7 +20,7 @@ const testimonial = () => {
             and industry partnerships, it continues to set the standard for
             maritime education in India and beyond.
           </p>
-          <div className="flex justify-between items-center mt-[15px] w-[100%]">
+          <div className="flex justify-between items-end mt-[15px] w-[100%]">
             <p className="text-[20px] font-[400] text-[#672013]">23/07/2024</p>
             <div className="flex gap-[4px]">
               <Image src={Star} alt="" />

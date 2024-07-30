@@ -9,7 +9,8 @@ import $ from "jquery";
 import "./header.css";
 import Link from "next/link";
 import { number } from "zod";
-const header = ({ Color, ActiveLink }) => {
+import { log } from "console";
+const header = ({ Color, ActiveLink, UserType }) => {
   let [fixed, setFixed] = useState(false);
 
   $(window).scroll(function () {
@@ -24,15 +25,22 @@ const header = ({ Color, ActiveLink }) => {
 
   let color: string = Color;
   let activeLink: number = ActiveLink;
-
+  let userType: string | undefined = UserType;
+  // console.log(userType);
   // console.log(color, fixed);
 
   return (
     <>
       <div className="home-contain position-relative  flex items-center justify-center w-[100%] hidden md:block  ">
         <div
-          className={`fixed top-[0px] flex items center justify-center w-[100%] xl:w-[90%] border-b-1 border-[#F9AB70] z-[55] min-w-[100%] p-[20px] min-h-[80px]  desk-nav transition-all duration-300 ${
-            fixed ? "bg-[#ffffff]" : color == "#fff" ? "" : "bg-[#fff]"
+          className={`fixed top-[0px] flex items center justify-center w-[100%] xl:w-[90%]  z-[55] min-w-[100%] p-[20px] ${
+            userType == "user" ? "min-h-[110px] " : "min-h-[80px]"
+          }  desk-nav transition-all duration-300 ${
+            fixed
+              ? "bg-[#ffffff] shadow-header"
+              : color == "#fff"
+              ? ""
+              : "bg-[#fff] shadow-header"
           }`}
         >
           <div className="flex w-[100%] absolute top-[15px] lg:w-[90%] justify-between items-center">
@@ -87,13 +95,15 @@ const header = ({ Color, ActiveLink }) => {
                   Testimonials
                 </p>
               </Link>
-              <a
-                className={`cursor-pointer ${
-                  activeLink == 5 ? "text-[#F9AB70]" : ""
-                }`}
-              >
-                Contact
-              </a>
+              <Link href="/contact">
+                <p
+                  className={`cursor-pointer ${
+                    activeLink == 5 ? "text-[#F9AB70]" : ""
+                  }`}
+                >
+                  Contact
+                </p>
+              </Link>
             </div>
             <div className="flex items-center justify-center gap-[20px]">
               {/* <a className="cursor-pointer text-[20px] font-[700] text-[#F9AB70]">
@@ -111,15 +121,14 @@ const header = ({ Color, ActiveLink }) => {
                 height={40}
                 alt="Picture of the logo"
               />
-              {fixed ? (
-                <button className="min-w-[92px] max-w-[92px] bg-[#F9AB70] min-h-[32px] max-h-[32px] flex items-center justify-center rounded-[8px] font-[600]  text-[#ffffff]">
-                  Log in
-                </button>
+              {userType == "user" ? (
+                <Image src={UserProfile} alt="" className="mt-[-10px]" />
               ) : (
-                <button className="min-w-[92px] max-w-[92px] bg-[#F9AB70] min-h-[32px] max-h-[32px] flex items-center justify-center rounded-[8px] font-[600]  text-[#ffffff]">
-                  Log in
-                </button>
-                // <Image src={UserProfile} alt="" className="mt-[-10px]" />
+                <Link href="/login-form">
+                  <button className="min-w-[92px] max-w-[92px] bg-[#F9AB70] min-h-[32px] max-h-[32px] flex items-center justify-center rounded-[8px] font-[600]  text-[#ffffff]">
+                    Log in
+                  </button>
+                </Link>
               )}
             </div>
           </div>
@@ -128,7 +137,7 @@ const header = ({ Color, ActiveLink }) => {
       <div className="home-contain position-relative  flex items-center justify-center w-[100%]">
         <nav className="w-[100%]  fixed z-[99] md:hidden bg-[#ffffff]">
           <div className="navbar w-[100%]">
-            <div className=" nav w-[100%] flex justify-between items-center min-h-[120px] relative">
+            <div className=" nav w-[100%] flex justify-between items-center min-h-[120px] relative shadow-header">
               <input
                 className="checkbox fixed block h-[32px] w-[32px] top-[20px] right-[20px] z-[5] cursor-pointer opacity-[0]"
                 type="checkbox"
@@ -153,33 +162,31 @@ const header = ({ Color, ActiveLink }) => {
                   <li className="mb-[18px] text-[18px] font-[500]">
                     <Link href="/courseCategory">
                       <p className="color-[#0e2431] font-[500] text-[20px] p-[6px] decoration-none hover:font-bold">
-                        about
+                        Course
                       </p>
                     </Link>
                   </li>
                   <li className="mb-[18px] text-[18px] font-[500]">
-                    <a
-                      href="#"
-                      className="color-[#0e2431] font-[500] text-[20px] p-[6px] decoration-none hover:font-bold"
-                    >
-                      blogs
-                    </a>
+                    <Link href="/about">
+                      <p className="color-[#0e2431] font-[500] text-[20px] p-[6px] decoration-none hover:font-bold">
+                        About
+                      </p>
+                    </Link>
+                  </li>
+
+                  <li className="mb-[18px] text-[18px] font-[500]">
+                    <Link href="/testimonial-public">
+                      <p className="color-[#0e2431] font-[500] text-[20px] p-[6px] decoration-none hover:font-bold">
+                        Testimonial
+                      </p>
+                    </Link>
                   </li>
                   <li className="mb-[18px] text-[18px] font-[500]">
-                    <a
-                      href="#"
-                      className="color-[#0e2431] font-[500] text-[20px] p-[6px] decoration-none hover:font-bold"
-                    >
-                      portfolio
-                    </a>
-                  </li>
-                  <li className="mb-[18px] text-[18px] font-[500]">
-                    <a
-                      href="#"
-                      className="color-[#0e2431] font-[500] text-[20px] p-[6px] decoration-none"
-                    >
-                      contact
-                    </a>
+                    <Link href="/contact">
+                      <p className="color-[#0e2431] font-[500] text-[20px] p-[6px] decoration-none">
+                        Contact
+                      </p>
+                    </Link>
                   </li>
                 </ul>
               </div>
