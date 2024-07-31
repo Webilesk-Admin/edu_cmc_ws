@@ -1,0 +1,31 @@
+.ant-select-selector {
+  background: #fbc59c !important;
+  color: black !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+}
+.ant-select-selection-placeholder {
+  color: #000 !important;
+}
+.ant-select-item {
+  text-align: center !important;
+  color: #672013 !important;
+  font-weight: 500 !important;
+}
+.rc-virtual-list-scrollbar-thumb {
+  display: none !important;
+}
+.ant-upload-wrapper.ant-upload-picture-card-wrapper
+  .ant-upload.ant-upload-select {
+  border-bottom: 0.4px solid #afafaf7a !important;
+  width: 44px !important;
+  height: 44px !important;
+  border: none !important;
+}
+.ant-modal .ant-modal-content {
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

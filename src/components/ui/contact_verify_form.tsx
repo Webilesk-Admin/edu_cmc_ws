@@ -65,7 +65,7 @@ const ProfileForm = () => {
                 </FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Indos No"
+                    placeholder="Name"
                     {...field}
                     type="text"
                     style={{ outline: "none" }}

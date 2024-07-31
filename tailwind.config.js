@@ -22,11 +22,19 @@ module.exports = {
         contact: "0px 2px 2px 0px #0000002E",
         header: "0px 2px 1.9px 0px #00000045;",
         course: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
+        exel: " -1px 2px 3.1px 0px #00000040;",
+      },
+      borderWidth: {
+        0.4: "0.5px",
+      },
+      colors: {
+        dark: "#c6aba6",
       },
     },
   },
   plugins: [addVariablesForColors],
 };
+
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
