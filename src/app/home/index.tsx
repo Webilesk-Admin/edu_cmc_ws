@@ -498,6 +498,7 @@ const Home = () => {
           alt=""
           className="mt-[30px] xl:ml-[40px] md:hidden  mob-identify"
         />
+        <p>Example</p>
       </div>
 
       <Footer />
