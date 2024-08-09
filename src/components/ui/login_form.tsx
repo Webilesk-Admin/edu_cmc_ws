@@ -7,7 +7,7 @@ var passwordRegex =
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
+import Link from "next/link";
 import {
   Form,
   FormControl,
@@ -96,9 +96,11 @@ const ProfileForm = () => {
                   />
                 </FormControl>
                 {/* <FormDescription>Nmae</FormDescription> */}
-                <p className="text-[14px] font-[400] text-[#fff] absolute right-[10px] bottom-[-30px] cursor-pointer">
-                  Forget Password?
-                </p>
+                <Link href="/forgetPass">
+                  <p className="text-[14px] font-[400] text-[#fff] absolute right-[10px] bottom-[-30px] cursor-pointer">
+                    Forget Password?
+                  </p>
+                </Link>
                 <FormMessage className="absolute text-[#FF3131] font-[600] text-[16px] bottom-[-30px] left-[20px]" />
               </FormItem>
             )}
@@ -113,9 +115,11 @@ const ProfileForm = () => {
             </button>
             <p className="text-[16px] mt-[15px] font-[400] text-[#fff]">
               Don’t have an account?{" "}
-              <span className="font-[600] text-[#F9AB70] cursor-pointer ">
-                Sign in
-              </span>
+              <Link href="/signup-form">
+                <span className="font-[600] text-[#F9AB70] cursor-pointer ">
+                  Sign in
+                </span>
+              </Link>
             </p>
           </div>
           {/* <Button type="submit">Submit</Button> */}

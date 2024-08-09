@@ -22,10 +22,14 @@
   height: 44px !important;
   border: none !important;
 }
-.ant-modal .ant-modal-content {
-  background: none;
+
+.ant-modal-close {
+  display: none;
+}
+.ant-modal-body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  gap: 20px;
 }

@@ -1,25 +1,25 @@
-.ant-modal-body {
+.profile-modal .ant-modal-body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
-.ant-modal-close {
+.profile-modal .ant-modal-close {
   display: none;
 }
-.ant-modal-content {
-  display: flex;
+.profile-modal .ant-modal-content {
+  display: flex !important;
   flex-direction: column;
-  align-items: center;
+  align-items: center !important;
   justify-content: center;
   min-height: 300px;
 }
-.ant-modal .ant-modal-content {
+.profile-modal .ant-modal .ant-modal-content {
   border: 2px solid #f9ab70;
   border-radius: 10px;
 }
-.ant-modal-root .ant-modal-mask {
+.profile-modal .ant-modal-root .ant-modal-mask {
   backdrop-filter: blur(2px);
   background-color: rgba(255, 255, 255, 0.59);
 }

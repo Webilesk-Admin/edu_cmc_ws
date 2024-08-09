@@ -35,7 +35,7 @@ const header = ({ Color, ActiveLink, UserType }) => {
         <div
           className={`fixed top-[0px] flex items center justify-center w-[100%] xl:w-[90%]  z-[55] min-w-[100%] p-[20px] ${
             userType == "user" ? "min-h-[110px] " : "min-h-[80px]"
-          }  desk-nav transition-all duration-300 ${
+          }  desk-nav transition-all duration-300  ${
             fixed
               ? "bg-[#ffffff] shadow-header"
               : color == "#fff"

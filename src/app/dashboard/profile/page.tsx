@@ -1,6 +1,7 @@
 import React from "react";
 import { Header, DashboardComp } from "@/component";
 import Dashboard_profile from "../../../components/ui/dashboard_profile";
+
 const Page = () => {
   return (
     <>

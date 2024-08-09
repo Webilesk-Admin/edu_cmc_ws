@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/form";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
-
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -395,10 +395,12 @@ const ProfileForm = () => {
               Login
             </button>
             <p className="text-[16px] mt-[15px] font-[400] text-[#fff]">
-              Don’t have an account?{" "}
-              <span className="font-[600] text-[#F9AB70] cursor-pointer ">
-                Sign in
-              </span>
+              Already have an account?
+              <Link href="/login-form">
+                <span className="font-[600] text-[#F9AB70] cursor-pointer ">
+                  Log in
+                </span>
+              </Link>
             </p>
           </div>
           {/* <Button type="submit">Submit</Button> */}

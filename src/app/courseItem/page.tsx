@@ -15,6 +15,8 @@ import Abs2 from "@/asset/cmc_courseItems_abs_2_img.png";
 import Abs3 from "@/asset/cmc_courseItems_abs_3_img.png";
 import ModalIcon1 from "@/asset/cmc_modal_course_item_modal_doc_icon.png";
 import ModalIcon2 from "@/asset/cmc_modal_course_item_modal_right_arr_icon.png";
+import NotFoundIcon from "@/asset/cmc_not_found_page_icon.png";
+
 import ModalCloseIcon from "@/asset/cmc_course_item_modal_close.png";
 import Link from "next/link";
 import { ExclamationCircleFilled } from "@ant-design/icons";
@@ -360,7 +362,7 @@ const page = () => {
             <Image src={buttonIcon} alt="" className="absolute right-[20px]" />
           </div>
         </div>
-
+        {/* 
         <Modal
           className="max-w-[1127px] flex items-center min-w-[90%]  justify-center xl:min-w-[1127px]"
           centered
@@ -385,6 +387,34 @@ const page = () => {
               </p>
             </div>
             <Image src={ModalIcon2} alt="" />
+          </div>
+          <Image
+            src={ModalCloseIcon}
+            alt=""
+            className="absolute right-[10px] top-[10px] max-w-[32px]  lg:max-w-[52px] lg:max-h-[52px] cursor-pointer"
+            onClick={() => setModal2Open(false)}
+          />
+        </Modal> */}
+        <Modal
+          className="max-w-[1127px] flex items-center min-w-[90%]  justify-center xl:min-w-[1127px]"
+          centered
+          open={modal2Open}
+          // onOk={() => setModal2Open(false)}
+          // onCancel={() => setModal2Open(false)}
+          footer={null}
+        >
+          <p className="max-w-[880px] text-center text-[25px] lg:text-[32px] font-[500]">
+            Please choose a batch to continue with the course booking process.
+          </p>
+          <div className=" flex items-center gap-[10px]">
+            <div
+              className="flex gap-[10px] border-b-2  border-[#000]"
+              onClick={() => setModal2Open(false)}
+            >
+              <Image src={NotFoundIcon} alt="" />
+
+              <p className="text-[24px] font-[500] text-[#F9AB70]">Back</p>
+            </div>
           </div>
           <Image
             src={ModalCloseIcon}

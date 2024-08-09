@@ -14,7 +14,7 @@ const page = () => {
             </p>
           </div>
         </div>
-        <div className="w-[95%] flex flex-col items-center min-[940px]:flex-row gap-[15px]">
+        <div className="w-[95%] flex flex-col items-center min-[940px]:flex-row gap-[15px] cart-card">
           <Image
             src={CourseImage}
             alt=""

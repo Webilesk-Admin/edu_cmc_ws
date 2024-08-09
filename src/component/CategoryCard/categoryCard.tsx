@@ -5,7 +5,7 @@ import Link from "next/link";
 const course_category = () => {
   return (
     <>
-      <div className=" basis-1/3">
+      <div className="  border border-[#D9D9D9] rounded-[23px] md:w-[478px]">
         <Link href="/subCat">
           <div className="flex gap-[20px] items-center m-[10px] cursor-pointer">
             <div className="min-w-[169px] max-w-[169px] min-h-[199px] max-h-[199px] bg-[#D9D9D9] rounded-[15px]"></div>

@@ -1,5 +1,7 @@
+"use client";
+import { useState } from "react";
 import React from "react";
-import { Header, Footer } from "@/component";
+import { Header, Footer, TimeLine } from "@/component";
 import Image from "next/image";
 import Link from "next/link";
 import BredArrow from "@/asset/bredcrumbs_arrow.png";
@@ -8,13 +10,20 @@ import AboutSecond from "@/asset/cmc_about_second_img.png";
 import AboutThird from "@/asset/cmc_about_third_img.png";
 import AboutFourth from "@/asset/cmc_about_fourth_img.png";
 import BulletIcon from "@/asset/cmc_about_icon_bullet.png";
+import Profile from "@/asset/cmc_about_timeline_profile_staff.png";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "About Us",
-  description: "About for CMC",
-};
+import TimelineObserver from "react-timeline-animation";
+// export const metadata: Metadata = {
+//   title: "About Us",
+//   description: "About for CMC",
+// };
 const page = () => {
+  const [message, setMessage] = useState("");
+
+  const onCallback = () => {
+    console.log("awesome");
+  };
   return (
     <>
       <div className="flex items-center  flex-col">
@@ -205,6 +214,112 @@ const page = () => {
             />
           </div>
         </div>
+        <TimelineObserver
+          handleObserve={(setObserver) => (
+            <TimeLine
+              callback={onCallback}
+              className="timeline"
+              setObserver={setObserver}
+            />
+          )}
+        />
+        {/* <div className="flex flex-col justify-center items-center gap-[20px]">
+          <p className="text-[36px] font-[700] text-[#672013] text-center">
+            Meet Our Dedicated Team
+          </p>
+          <p className="text-[26px] font-[600] text-[#353535] max-w-[898px] text-center mt-[10px]">
+            Welcome to CMC Maritime, where our dedicated team of experts is at
+            the forefront of marine research, education, and conservation. Get
+            to know the passionate individuals who are driving our mission
+            forward:
+          </p>
+          <div className="lg:max-w-[80%] min-[1250px]:w-[70%]  min-[1512px]:w-[50%]  mt-[60px] flex gap-[10px] flex-wrap w-[90%] justify-center relative">
+            <div className="w-[215px] min-h-[259px] max-h-[259px]  m-[20px] flex flex-col justify-center items-center bg-[#D9D9D9] rounded-[10px] gap-[10px]">
+              <Image src={Profile} alt="" />
+              <p className="text-[22px] font-[600] text-[#672013]">Name</p>
+              <div className="mt-[-4px]">
+                <p className="text-[18px] font-[600] text-[#000] ">
+                  Designation
+                </p>
+                <p className="text-[18px] font-[600] text-[#000]">
+                  Designation
+                </p>
+              </div>
+            </div>
+            <div className="w-[215px] min-h-[259px] max-h-[259px] m-[20px] min-[884px]:mt-[-40px]  flex flex-col justify-center items-center bg-[#D9D9D9] rounded-[10px] gap-[10px]">
+              <Image src={Profile} alt="" />
+              <p className="text-[22px] font-[600] text-[#672013]">Name</p>
+              <div className="mt-[-4px]">
+                <p className="text-[18px] font-[600] text-[#000] ">
+                  Designation
+                </p>
+                <p className="text-[18px] font-[600] text-[#000]">
+                  Designation
+                </p>
+              </div>
+            </div>
+            <div className="w-[215px] min-h-[259px] flex flex-col max-h-[259px] m-[20px] justify-center items-center bg-[#D9D9D9] rounded-[10px] gap-[10px]">
+              <Image src={Profile} alt="" />
+              <p className="text-[22px] font-[600] text-[#672013]">Name</p>
+              <div className="mt-[-4px]">
+                <p className="text-[18px] font-[600] text-[#000] ">
+                  Designation
+                </p>
+                <p className="text-[18px] font-[600] text-[#000]">
+                  Designation
+                </p>
+              </div>
+            </div>
+            <div className="w-[215px] min-h-[259px] flex flex-col  max-h-[259px] m-[20px] justify-center items-center bg-[#D9D9D9] rounded-[10px] gap-[10px]">
+              <Image src={Profile} alt="" />
+              <p className="text-[22px] font-[600] text-[#672013]">Name</p>
+              <div className="mt-[-4px]">
+                <p className="text-[18px] font-[600] text-[#000] ">
+                  Designation
+                </p>
+                <p className="text-[18px] font-[600] text-[#000]">
+                  Designation
+                </p>
+              </div>
+            </div>
+            <div className="w-[215px] min-h-[259px] flex flex-col  max-h-[259px] m-[20px] justify-center items-center bg-[#D9D9D9] rounded-[10px] gap-[10px]">
+              <Image src={Profile} alt="" />
+              <p className="text-[22px] font-[600] text-[#672013]">Name</p>
+              <div className="mt-[-4px]">
+                <p className="text-[18px] font-[600] text-[#000] ">
+                  Designation
+                </p>
+                <p className="text-[18px] font-[600] text-[#000]">
+                  Designation
+                </p>
+              </div>
+            </div>
+            <div className="w-[215px] min-h-[259px] flex flex-col  max-h-[259px] m-[20px] justify-center items-center bg-[#D9D9D9] rounded-[10px] gap-[10px]">
+              <Image src={Profile} alt="" />
+              <p className="text-[22px] font-[600] text-[#672013]">Name</p>
+              <div className="mt-[-4px]">
+                <p className="text-[18px] font-[600] text-[#000] ">
+                  Designation
+                </p>
+                <p className="text-[18px] font-[600] text-[#000]">
+                  Designation
+                </p>
+              </div>
+            </div>
+            <div className="w-[215px] min-h-[259px] flex flex-col  max-h-[259px] m-[20px] justify-center items-center bg-[#D9D9D9] rounded-[10px] gap-[10px]">
+              <Image src={Profile} alt="" />
+              <p className="text-[22px] font-[600] text-[#672013]">Name</p>
+              <div className="mt-[-4px]">
+                <p className="text-[18px] font-[600] text-[#000] ">
+                  Designation
+                </p>
+                <p className="text-[18px] font-[600] text-[#000]">
+                  Designation
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> */}
         <Footer />
       </div>
     </>

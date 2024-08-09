@@ -7,6 +7,8 @@ import { z } from "zod";
 import SignupIcon from "../../asset/cmc_signup_date_icon.png";
 import PasswordEye from "../../asset/cmc_form_password_eye.png";
 import Image from "next/image";
+import dayjs from "dayjs";
+
 import { CaretDownOutlined } from "@ant-design/icons";
 import moment from "moment";
 import {
@@ -36,13 +38,13 @@ import { message, DatePicker } from "antd";
 import { useState } from "react";
 import $ from "jquery";
 import { Dropdown } from "react-day-picker";
-
 // regex
 var IndosRegex = /^\d{2}[a-zA-Z]{2}\d{4}$/;
 var nameRegex = /^[a-zA-Z ]+$/;
 var passwordRegex =
   /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{9}$/;
 var mobileRegex = /^[6-9]{1}[0-9]{9}$/;
+var pincodeRegex = /^[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3}$/;
 
 const ProfileForm = () => {
   const [date, setDate] = useState<Date | undefined>(undefined);
@@ -83,6 +85,10 @@ const ProfileForm = () => {
     city: z.string().min(1, { message: "Enter the City" }),
     state: z.string().nonempty({ message: "Please select a value" }),
     country: z.string().nonempty({ message: "Please select a value" }),
+    pincode: z
+      .string()
+      .min(1, { message: "Enter the Pincode" })
+      .regex(pincodeRegex, { message: "Invalid Pincode" }),
   });
 
   const form = useForm<z.infer<typeof formScehma>>({
@@ -98,11 +104,15 @@ const ProfileForm = () => {
       state: "",
       country: "",
       address_1: "",
+      pincode: "",
     },
   });
   const onSubmit = (values: z.infer<typeof formScehma>) => {
     console.log(values);
   };
+
+  let dateFormat = "DD-MM-YYYY";
+
   return (
     <div className="">
       <Form {...form}>
@@ -183,12 +193,19 @@ const ProfileForm = () => {
                           render={({ field: { onChange, onBlur, value } }) => (
                             <DatePicker
                               onChange={(date, dateString) => {
-                                onChange(dateString); // Set the string format
+                                if (date) {
+                                  onChange(dateString); // Set the string format
+                                } else {
+                                  onChange("");
+                                }
                               }}
                               className="w-[244px] h-[37px] text-[20px] font-[500] text-[#672013] border  border-[rgba(0, 0, 0, 0.16)] rounded-[12px]"
                               onBlur={onBlur}
-                              value={value ? moment(value) : null} // Use moment for controlled component
-                              format="DD-MM-YYYY" // Format to display in the picker
+                              disabledDate={(current) =>
+                                current && current > dayjs()
+                              }
+                              value={value ? moment(value, "DD MM YYYY") : ""}
+                              format={dateFormat}
                             />
                           )}
                         />
@@ -208,9 +225,9 @@ const ProfileForm = () => {
                     </FormLabel>
                     <Input
                       placeholder="Age"
+                      readOnly
                       {...field}
                       type="text"
-                      maxLength={10}
                       style={{
                         outline: "none",
                         boxShadow: "none",
@@ -257,7 +274,7 @@ const ProfileForm = () => {
             </div>
             <div className="max-w-[700px]  flex-col gap-[10px] md:gap-[0px] sm:flex-row flex">
               <p className="text-[20px] font-[400] text-[#F9AB70] w-[300px]">
-                Mobile Number
+                WhatsApp Number
               </p>
               <FormField
                 control={form.control}
@@ -266,7 +283,7 @@ const ProfileForm = () => {
                   <FormItem className="relative flex flex-col gap-[10px] sm:gap-[20px]  md:gap-[0px] sm:flex-row max-w-[570px]  ">
                     <FormControl>
                       <Input
-                        placeholder="What`s Number"
+                        placeholder="WhatsApp Number"
                         {...field}
                         type="text"
                         maxLength={10}
@@ -408,6 +425,31 @@ const ProfileForm = () => {
               </p>
               {/* </div> */}
               <div className="flex flex-wrap md:justify-end lg:justify-start gap-[20px]">
+                <div className="relative mt-[10px]">
+                  <p className="absolute text-[#f9ab70] bg-[#ffffff] w-[30px] h-[20px] flex justify-center items-center top-[-12px]   z-[336] text-[14px] font-[400] left-[35px]">
+                    Pincode
+                  </p>
+                  <FormField
+                    control={form.control}
+                    name="pincode"
+                    render={({ field }) => (
+                      <FormItem className="relative ">
+                        <FormControl>
+                          <Input
+                            placeholder="pincode"
+                            {...field}
+                            maxLength={6}
+                            type="text"
+                            style={{ outline: "none", boxShadow: "none" }}
+                            className="w-[244px] h-[37px] text-[20px] font-[500] pl-[25px] py-[6px] text-[#672013] border  border-[rgba(0, 0, 0, 0.16)] rounded-[12px]"
+                          />
+                        </FormControl>
+                        {/* <FormDescription>Nmae</FormDescription> */}
+                        <FormMessage className="absolute text-[#FF3131] font-[600] text-[12px] bottom-[-20px] left-[10px]" />
+                      </FormItem>
+                    )}
+                  />
+                </div>
                 <div className="mt-[10px] relative">
                   <p className="absolute text-[#f9ab70] bg-[#ffffff] w-[30px] h-[20px] flex justify-center items-center top-[-10px]   z-[336] text-[14px] font-[400] left-[25px]">
                     State
@@ -456,6 +498,7 @@ const ProfileForm = () => {
                             }
                             onChange={(value) => {
                               field.onChange(value);
+                              // getState(value);
                             }}
                             options={[
                               {
@@ -491,7 +534,7 @@ const ProfileForm = () => {
                   />
                 </div>
                 <div className="mt-[10px] relative">
-                  <p className="absolute text-[#f9ab70] bg-[#ffffff] w-[40px] h-[20px] flex justify-center items-center top-[-10px]   z-[336] text-[14px] font-[400] left-[25px]">
+                  <p className="absolute text-[#f9ab70] country-select bg-[#ffffff] w-[40px] h-[20px] flex justify-center items-center top-[-10px]   z-[336] text-[14px] font-[400] left-[25px]">
                     Country
                   </p>
                   <FormField

@@ -65,7 +65,7 @@ const Home = () => {
         <h2 className="max-w-[544px] text-[#FFFFFF] text-[48px] font-[700] text-center">
           CMC Maritime Academy Chennai
         </h2>
-        <div className="min-w-[208px] max-w-[208px] h-[39px] flex rounded-[8px] items-center justify-center bg-[#F9AB70] gap-[10px] cursor-pointer">
+        {/* <div className="min-w-[208px] max-w-[208px] h-[39px] flex rounded-[8px] items-center justify-center bg-[#F9AB70] gap-[10px] cursor-pointer">
           <p className="text-[#ffffff] font-[600] jque">Book Your Course</p>
           <Image
             src={bookButton}
@@ -73,7 +73,7 @@ const Home = () => {
             height={24}
             alt="Picture of the logo"
           />
-        </div>
+        </div> */}
         <p className="max-w-[857px] text-[#FFFFFF] md:text-[28px] text-[20px] font-[700] text-center">
           " THE BEST WAY TO PREDICT YOUR FUTURE IS TO CREATE IT JOIN WITH US TO
           CREATE YOUR FUTURE"
@@ -81,7 +81,8 @@ const Home = () => {
         <div className="max-w-[693px] w-[100%] h-[59px] relative ">
           <input
             type="text"
-            className="w-[100%] h-[100%] rounded-[25px] outline-none px-[20px] lg:pr-[110px] text-[20px] text-[#868686] "
+            className="w-[100%] h-[100%] rounded-[25px] outline-none px-[40px] lg:pr-[110px] text-[20px] text-[#868686] "
+            placeholder="Search Course You Looking For ..."
           />
           <div className="bg-[#F9AB70] h-[59px] flex rounded-r-[25px] items-center justify-center absolute right-[0px] top-[0px] w-[98px]">
             <Image src={searchButton} width={32} height={32} alt="logo" />
@@ -186,7 +187,7 @@ const Home = () => {
               />
             </div>
             <p className="text-[28px] font-[700] text-[#ffffff]">
-              Certficate Revalidation
+              Certificate Revalidation
             </p>
           </div>
         </div>
@@ -472,7 +473,7 @@ const Home = () => {
           <p className="lg:text-[64px] text-[20px]  ml-[20px] mt-[20px] max-w-[100px] pt-[26px] md:pt-[0px] md:text-[44px] font-[700] md:leading-[76px] fix-content lg:max-w-[405px] md:max-w-[305px] text-[#ffffff]">
             <span className="text-[#F9AB70]">Navigate</span> with purpose, each
             challenge is a step towards{" "}
-            <span className="text-[#F9AB70]">greatness </span>
+            <span className="text-[#F9AB70]">GREATNESS </span>
           </p>
         </div>
         <Image

@@ -36,7 +36,7 @@ const courseCategory = () => {
         <p className="text-[32px] font-[700] text-[#672013] my-[10px]">
           Choose a Category
         </p>
-        <div className="flex flex-wrap justify-center max-w-[100%] gap-[40px] my-[50px]">
+        <div className="flex flex-wrap justify-center w-[100%] gap-[40px] xl:max-w-[70%] my-[50px]">
           <CourseCategory />
           <CourseCategory />
           <CourseCategory />

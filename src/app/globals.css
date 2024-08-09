@@ -122,3 +122,72 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+/* Mailer */
+.signup-mailer {
+  background: url("../asset/cmc_mailer_signup_banner_img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.second-sign {
+  background: linear-gradient(
+    90deg,
+    #f3f4f8 0%,
+    #dfe8ef 26.5%,
+    #dae4ee 62%,
+    #dfe9f3 77%,
+    #eef1f8 100%
+  );
+  border-bottom: 0.3px solid #672013c7;
+  box-shadow: 0px 2px 2.5px 0px #00000040;
+}
+.third-sign {
+  background: linear-gradient(
+    90deg,
+    #f3f4f8 0%,
+    #dfe8ef 26.5%,
+    #dae4ee 62%,
+    #dfe9f3 77%,
+    #eef1f8 100%
+  );
+}
+.input-otp__field {
+  width: 48px !important;
+  height: 44px !important;
+}
+.input-otp__field:focus {
+  border: 2px solid #f9ab70;
+}
+.input-otp {
+  margin: 10px;
+}
+@media screen and (min-width: 940px) {
+  .cart-card {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1410px) {
+  .cart-rate-card {
+    display: block;
+  }
+  .cart-btn-total {
+    display: none;
+  }
+}
+@media screen and (min-width: 1088px) {
+  .mydoc-file {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1103px) {
+  .course-cer-file {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 986px) {
+  .course-cer-main {
+    flex-direction: row;
+    gap: 0px;
+  }
+}

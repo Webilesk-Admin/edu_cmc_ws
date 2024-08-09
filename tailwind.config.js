@@ -1,6 +1,12 @@
+import { withUt } from "uploadthing/tw";
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
+
+export default withUt({
+  // Your existing Tailwind config
+  content: ["./src/**/*.{ts,tsx,mdx}"],
+});
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -26,6 +32,7 @@ module.exports = {
       },
       borderWidth: {
         0.4: "0.5px",
+        0.3: "0.3px",
       },
       colors: {
         dark: "#c6aba6",

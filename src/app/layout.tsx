@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
-
+import "aos/dist/aos.css";
+import { AOS } from "aos";
 const inter = Jost({
   preload: false,
 });

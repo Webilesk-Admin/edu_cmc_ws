@@ -38,7 +38,7 @@ const page = () => {
                 <CartItemCard />
               </div>
             </div>
-            <div className="hidden min-[1410px]:block min-w-[292px]  max-w-[292px] flex flex-col mr-[4px] h-[100%] border-2 border-dashed border-[#D9D9D9B8] h-[332px] rounded-[12px] mt-[100px] p-[20px]">
+            <div className="hidden min-[1410px]:block min-w-[292px] cart-rate-card max-w-[292px] flex flex-col mr-[4px] h-[100%] border-2 border-dashed border-[#D9D9D9B8] h-[332px] rounded-[12px] mt-[100px] p-[20px]">
               <p className="text-[22px] text-[#672013] font-[500] ">
                 Cart Totals
               </p>
@@ -74,7 +74,7 @@ const page = () => {
             <Image
               src={modalState ? OpenedIcon : ClosedIcon}
               alt=""
-              className="fixed top-[50%] right-[10px] max-h-[60px] max-w-[60px] z-[1] cursor-pointer  min-[1410px]:hidden"
+              className="fixed top-[50%] right-[10px] max-h-[60px] max-w-[60px] z-[1] cursor-pointer cart-btn-total min-[1410px]:hidden"
               onClick={clickModal}
             />
           </div>
