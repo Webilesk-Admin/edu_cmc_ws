@@ -6,3 +6,188 @@
   margin: 0px;
   padding: 0px;
 }
+.course-ban {
+  background-image: url("../asset/cmc_course_banner_img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.login-form {
+  background-image: url("../asset/cmc_login_form_img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.glass-morph {
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.log-inp {
+  background: rgba(9, 84, 155, 0);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.log-inp:focus {
+  border: 2px solid #f9ab70;
+}
+.waterEffect {
+  background: url("../asset/cmc_contact_watereffect.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.scroll-side {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.scroll-side::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.ant-select-selector {
+  box-shadow: none;
+}
+.ant-select-selector {
+  box-shadow: none !important;
+}
+.ant-picker-input input {
+  font-size: 20px !important;
+  font-weight: 500;
+}
+.pymt-first {
+  /* background: url(".././asset/cm_dashboard_pymt_first_table.png"); */
+  height: 100%;
+  background: transparent;
+  min-height: 387px;
+  /* max-height: 387px; */
+  /* background-position: center; */
+}
+.pymt-table::-webkit-scrollbar {
+  height: 8px;
+  cursor: pointer;
+}
+
+.pymt-table::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #672013;
+  max-width: 15px;
+  position: absolute;
+  top: 0px;
+}
+.pymt-table {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+/* WebKit browsers (Chrome, Safari, Edge) */
+.pymt-table::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.pymt-table::-webkit-scrollbar-thumb {
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+  background: #672013; /* Color of the scrollbar thumb */
+}
+
+.pymt-table::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Firefox */
+.pymt-table {
+  scrollbar-width: thin; /* Set scrollbar to thin */
+  scrollbar-color: #672013 #f1f1f1; /* Thumb color and track color */
+}
+
+/* Edge (specific styles) */
+@supports (-ms-overflow-style: scrollbar) {
+  .pymt-table {
+    -ms-overflow-style: auto; /* Use auto for Edge */
+  }
+}
+
+.pymt-table {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 400px; /* Set a max height for the table */
+}
+@media screen and (min-width: 1260px) {
+  .pymt-table {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* Mailer */
+.signup-mailer {
+  background: url("../asset/cmc_mailer_signup_banner_img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.second-sign {
+  background: linear-gradient(
+    90deg,
+    #f3f4f8 0%,
+    #dfe8ef 26.5%,
+    #dae4ee 62%,
+    #dfe9f3 77%,
+    #eef1f8 100%
+  );
+  border-bottom: 0.3px solid #672013c7;
+  box-shadow: 0px 2px 2.5px 0px #00000040;
+}
+.third-sign {
+  background: linear-gradient(
+    90deg,
+    #f3f4f8 0%,
+    #dfe8ef 26.5%,
+    #dae4ee 62%,
+    #dfe9f3 77%,
+    #eef1f8 100%
+  );
+}
+.input-otp__field {
+  width: 48px !important;
+  height: 44px !important;
+}
+.input-otp__field:focus {
+  border: 2px solid #f9ab70;
+}
+.input-otp {
+  margin: 10px;
+}
+@media screen and (min-width: 940px) {
+  .cart-card {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1410px) {
+  .cart-rate-card {
+    display: block;
+  }
+  .cart-btn-total {
+    display: none;
+  }
+}
+@media screen and (min-width: 1088px) {
+  .mydoc-file {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1103px) {
+  .course-cer-file {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 986px) {
+  .course-cer-main {
+    flex-direction: row;
+    gap: 0px;
+  }
+}
