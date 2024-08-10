@@ -119,7 +119,7 @@ const footer = () => {
         </div>
         <div className="absolute flex flex-col md:flex-row justify-center items-center gap-[10px] md:justify-between bottom-[15px] md:w-[80%] sm:w-[100%]  xl:w-[80%]">
           <p className="text-[16px] font-[400] text-[#ffffff] ">
-            Copyright © 2024 CMC All Rights Reserved
+            Copyright © 2024 CMC All Rights 
           </p>
           <p className="text-[18px] font-[400] text-[#ffffff] ">
             Powered By Webilesk
