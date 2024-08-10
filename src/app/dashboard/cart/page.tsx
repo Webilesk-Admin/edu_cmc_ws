@@ -6,7 +6,7 @@ import { useState } from "react";
 import Image from "next/image";
 import ClosedIcon from "../../../asset/cmc_dashboard_cart_closed_icon.png";
 import OpenedIcon from "../../../asset/cmc_dashboard_cart_opened_icon.png";
-const page = () => {
+const Page = () => {
   let [modalState, setModalState] = useState<boolean>(false);
   const clickModal = () => {
     setModalState(!modalState);
@@ -17,11 +17,11 @@ const page = () => {
   return (
     <>
       <div>
-        <Header UserType={"user"} ActiveLink={0} Color={""} />
+        <Header UserType={"user"} ActiveLink={"0"} Color={""} />
         <div className="flex justify-center items-start w-full mt-[40px] md:mt-[110px] h-[80vh] h-full">
           <div className="w-full overflow-hidden 2xl:w-[87%]  flex md:gap-[30px] relative">
             <div className="sticky top-[110px] z-10">
-              <DashboardComp DashCount={2} />
+              {/* <DashboardComp DashCount={2} /> */}
             </div>
 
             <div className="overflow-y-scroll  w-[100%] h-[88vh] scroll-side">
@@ -128,4 +128,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -47,7 +47,7 @@ const ProfileForm = () => {
   return (
     <div className="flex items-center justify-center flex-col gap-[0px]">
       <Form
-        className="flex items-center justify-center flex-col gap-[0px]"
+        
         {...form}
       >
         <form

@@ -32,16 +32,17 @@ import {
 import { Input } from "@/components/ui/input";
 import { message } from "antd";
 import { log } from "console";
-type FileType = Parameters<UploadProps["beforeUpload"]>[0];
+// type FileType = Parameters<UploadProps["beforeUpload"]>[0];
 
-const getBase64 = (file: FileType): Promise<string> =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result as string);
-    reader.onerror = (error) => reject(error);
-  });
+// const getBase64 = (file: FileType): Promise<string> =>
+//   new Promise((resolve, reject) => {
+//     const reader = new FileReader();
+//     reader.readAsDataURL(file);
+//     reader.onload = () => resolve(reader.result as string);
+//     reader.onerror = (error) => reject(error);
+//   });
 const formScehma = z.object({
+  indos_no:z.string().min(1, { message: "Passport Number is required" }),
   Passportno: z.string().min(1, { message: "Passport Number is required" }),
   med_date: z.string().optional(), // Adjust based on actual validation needs
   coc_no: z.string().min(1, { message: "COC Number is required" }),
@@ -53,12 +54,12 @@ const formScehma = z.object({
   expDate: z.string().optional(),
 });
 
-const dashboardMydocument = () => {
+const DashboardMydocument = () => {
   // ...
   const form = useForm<z.infer<typeof formScehma>>({
     resolver: zodResolver(formScehma),
     defaultValues: {
-      indos_no: "",
+      indos_no:"",
       Passportno: "",
       med_date: "",
       coc_no: "",
@@ -67,7 +68,7 @@ const dashboardMydocument = () => {
       year: "",
       month: "",
       date: "",
-      med_date: "",
+     
       expDate: "",
     },
   });
@@ -85,7 +86,7 @@ const dashboardMydocument = () => {
   const handlePreview = async (file: UploadFile) => {
     setPreviewImage("");
     if (!file.url && !file.preview) {
-      file.preview = await getBase64(file.originFileObj as FileType);
+      // file.preview = await getBase64(file.originFileObj as FileType);
     }
     setPreviewImage(file.url || (file.preview as string));
     setPreviewOpen(true);
@@ -141,10 +142,10 @@ const dashboardMydocument = () => {
     }
   };
   // console.log(MedicalFile);
-
+  var result="";
   if (fileList.length >= 1) {
     var value = fileList[0];
-    var result = value.name || (value.name as string);
+    result = value.name || (value.name as string);
     var url = value.url || (value.preview as string);
   }
   if (MedicalFile.length >= 1) {
@@ -186,7 +187,7 @@ const dashboardMydocument = () => {
   return (
     <div className="flex items-center justify-start flex-col gap-[0px] w-[100%]">
       <Form
-        className="flex items-center justify-center flex-col gap-[0px] w-[100%]"
+       
         {...form}
       >
         <form
@@ -321,9 +322,7 @@ const dashboardMydocument = () => {
                     {fileList.length >= 1 ? result : "No File Selected"}
                   </p>
                   <p className="text-[400] text-[12px] max-w-[200px] text-[#989692]">
-                    {fileList.length >= 1
-                      ? (value.size / 1024).toFixed(2) + "Kb"
-                      : "File Size"}
+                   File Size
                   </p>
                   <p
                     onClick={handleManualPreview}
@@ -469,12 +468,10 @@ const dashboardMydocument = () => {
                 />
                 <div className="">
                   <p className="text-[500] text-[14px] max-w-[200px]">
-                    {MedicalFile.length >= 1 ? medresult : "No File Selected"}
+                   No File Selected
                   </p>
                   <p className="text-[400] text-[12px] max-w-[200px] text-[#989692]">
-                    {MedicalFile.length >= 1
-                      ? (medvalue.size / 1024).toFixed(2) + "Kb"
-                      : "File Size"}
+                    File Size
                   </p>
                   <p
                     onClick={handlePassPreview}
@@ -621,12 +618,10 @@ const dashboardMydocument = () => {
                 />
                 <div className="">
                   <p className="text-[500] text-[14px] max-w-[200px]">
-                    {cocFile.length >= 1 ? cocresult : "No File Selected"}
+                    No File Selected
                   </p>
                   <p className="text-[400] text-[12px] max-w-[200px] text-[#989692]">
-                    {cocFile.length >= 1
-                      ? (cocvalue.size / 1024).toFixed(2) + "Kb"
-                      : "File Size"}
+                    File Size
                   </p>
                   <p
                     onClick={handleCocPreview}
@@ -741,12 +736,10 @@ const dashboardMydocument = () => {
                 />
                 <div className="">
                   <p className="text-[500] text-[14px] max-w-[200px]">
-                    {cdcFile.length >= 1 ? cdcresult : "No File Selected"}
+                    No File Selected
                   </p>
                   <p className="text-[400] text-[12px] max-w-[200px] text-[#989692]">
-                    {cdcFile.length >= 1
-                      ? (cdcvalue.size / 1024).toFixed(2) + "Kb"
-                      : "File Size"}
+                   File Size
                   </p>
                   <p
                     onClick={handleCdcPreview}
@@ -856,4 +849,4 @@ const dashboardMydocument = () => {
     </div>
   );
 };
-export default dashboardMydocument;
+export default DashboardMydocument;

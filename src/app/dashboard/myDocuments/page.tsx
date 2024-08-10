@@ -6,11 +6,11 @@ import DashDocIcon from "@/asset/cmc_dashboard_mydocument_doc_icon.png";
 const page = () => {
   return (
     <div>
-      <Header UserType={"user"} ActiveLink={0} Color={""} />
+      <Header UserType={"user"} ActiveLink={"0"} Color={""} />
       <div className="flex justify-center items-start w-full mt-[60px] md:mt-[110px] h-[80vh] h-full">
         <div className="w-full 2xl:w-[87%]  flex md:gap-[30px] relative">
           <div className="sticky top-[110px] z-10">
-            <DashboardComp DashCount={5} />
+            {/* <DashboardComp DashCount={5} /> */}
           </div>
 
           <div className="overflow-y-scroll  w-[100%] h-[88vh] flex justify-center scroll-side">

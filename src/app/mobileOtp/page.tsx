@@ -14,7 +14,7 @@ import MailUnverified from "@/asset/cmc_mail_icon_unverified.png";
 import UserUnverified from "@/asset/cmc_user_icon_unverified.png";
 import "./style.css";
 
-const page = () => {
+const Page = () => {
   const [value, setValue] = useState<string[]>([]);
   const [modal2Open, setModal2Open] = useState<boolean>(false);
   const show = () => {
@@ -27,7 +27,7 @@ const page = () => {
   return (
     <>
       <div className="login-form min-h-[100vh] min-w-[100%]">
-        <Header Color={"#fff"} UserType={"user"} />
+        <Header Color={"#fff"} ActiveLink="0" UserType={"user"} />
         <div className=" flex items-center justify-center mt-[60px] w-[100%] md:max-w-[90%]  min-h-[100vh] ">
           <div className="  w-[95%] xl:w-[1066px] md:h-[568px] py-[20px] lg:min-h-[568px] flex flex-col items-center justify-center gap-[20px] m-[10px] lg:ml-[80px] glass-morph mt-[50px] md:mt-[0px]">
             <div className="flex flex-col md:flex-row items-center justify-between xl:w-[750px] w-[80%]">
@@ -116,4 +116,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

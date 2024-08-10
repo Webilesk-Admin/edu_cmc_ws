@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { ConfigProvider, Table } from "antd";
 import Image from "next/image";
@@ -89,10 +90,14 @@ const onChange: TableProps<DataType>["onChange"] = (
   sorter,
   extra
 ) => {
-  // console.log("params", pagination, filters, sorter, extra);
+  // Optionally handle table changes
 };
 
-const Page = ({ Page }) => (
+interface PageProps {
+  Page: number; // Define the type of the Page prop here
+}
+
+const Page: React.FC<PageProps> = ({ Page }) => (
   <div className="w-[100%] bg-transparent">
     <ConfigProvider
       theme={{

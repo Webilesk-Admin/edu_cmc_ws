@@ -60,7 +60,7 @@ const Home = () => {
 
   return (
     <div className="home-parent w-[100%] flex flex-col items-center justify-center ">
-      {/* <Header Color={"#fff"} ActiveLink={1} UserType={"user"} /> */}
+      <Header Color={"#fff"} ActiveLink={"1"} UserType={"user"} />
       <div className="hero-banner min-h-[860px]  flex flex-col items-center justify-center min-w-[100%] gap-[30px] relative">
         <h2 className="max-w-[544px] text-[#FFFFFF] text-[48px] font-[700] text-center">
           CMC Maritime Academy Chennai
@@ -75,8 +75,7 @@ const Home = () => {
           />
         </div> */}
         <p className="max-w-[857px] text-[#FFFFFF] md:text-[28px] text-[20px] font-[700] text-center">
-          " THE BEST WAY TO PREDICT YOUR FUTURE IS TO CREATE IT JOIN WITH US TO
-          CREATE YOUR FUTURE"
+        &ldquo;THE BEST WAY TO PREDICT YOUR FUTURE IS TO CREATE IT JOIN WITH US TO CREATE YOUR FUTURE&rdquo;
         </p>
         <div className="max-w-[693px] w-[100%] h-[59px] relative ">
           <input
@@ -113,7 +112,7 @@ const Home = () => {
                   the standards of its students and facilities.
                 </p>
                 <p className="max-w-[699px] text-[24px] leading-[39px] text-[#7E7E7E] mt-[40px]">
-                  The Motto of the institution "EMINENCE THROUGH EXCELLENCE" is
+                  The Motto of the institution &ldquo;EMINENCE THROUGH EXCELLENCE&ldquo; is
                   pre-eminently enshrined to ignite and enlighten the minds of
                   the yougsters through education by dispelling the darkness of
                   ignorance.

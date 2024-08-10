@@ -10,15 +10,14 @@ const page = () => {
   return (
     <>
       <div className="flex items-center  flex-col">
-        <Header Color={"#7E7E7E"} ActiveLink={"4"} />
+      <Header  ActiveLink="4" UserType={"user"} Color={""} />
         <div className="min-h-[169px] bg-[#F9AB70] min-w-[100%] mt-[68px] md:mt-[80px]  flex items-center justify-center p-[10px] md:p-[0px] course-ban">
           <div className=" min-w-[80%]">
             <p className="text-[26px] max-w-[478px] text-[#fff] font-[600]">
               Our wall of love
             </p>
             <p className="text-[18px] max-w-[555px] font-[600] mt-[10px]">
-              "Read what our talented community members are saying about CMC
-              Maritime academy chennai."
+              &ldquo;Read what our tale.&ldquo;
             </p>
           </div>
         </div>

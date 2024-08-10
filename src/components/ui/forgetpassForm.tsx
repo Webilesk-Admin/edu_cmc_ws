@@ -107,7 +107,7 @@ const ForgetForm = () => {
           </p>
           {!otpStatus && (
             <Form
-              className="flex items-center justify-center flex-col gap-[0px]"
+              
               {...form}
             >
               <form
@@ -256,7 +256,7 @@ const ForgetForm = () => {
             </p>
           </div>
           <Form
-            className="flex items-center justify-center flex-col gap-[0px]"
+            
             {...form1}
           >
             <form

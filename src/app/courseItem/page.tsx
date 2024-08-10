@@ -23,7 +23,7 @@ import { ExclamationCircleFilled } from "@ant-design/icons";
 import { Button, Modal, Space } from "antd";
 
 import "./style.css";
-const page = () => {
+const Page = () => {
   const [modal2Open, setModal2Open] = useState<boolean>(false);
   const show = () => {
     setModal2Open(true);
@@ -216,7 +216,7 @@ const page = () => {
                           name="radio-group"
                           className="radio-input"
                         />
-                        <label for="radio4" className="radio-label">
+                        <label htmlFor="radio4" className="radio-label">
                           <span className="radio-inner-circle"></span>
                         </label>
                       </td>
@@ -241,7 +241,7 @@ const page = () => {
                           name="radio-group"
                           className="radio-input"
                         />
-                        <label for="radio5" className="radio-label">
+                        <label htmlFor="radio5" className="radio-label">
                           <span className="radio-inner-circle"></span>
                         </label>
                       </td>
@@ -429,4 +429,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

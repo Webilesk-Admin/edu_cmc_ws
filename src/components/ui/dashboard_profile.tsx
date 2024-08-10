@@ -50,10 +50,10 @@ const ProfileForm = () => {
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [selectVal, setSelectVal] = useState<string>("");
 
-  const selected = (value) => {
-    console.log(value);
-    setSelectVal(value);
-  };
+  // const selected = (value) => {
+  //   console.log(value);
+  //   setSelectVal(value);
+  // };
 
   const formScehma = z.object({
     name: z
@@ -89,6 +89,9 @@ const ProfileForm = () => {
       .string()
       .min(1, { message: "Enter the Pincode" })
       .regex(pincodeRegex, { message: "Invalid Pincode" }),
+    age:z.string(),
+    address_2:z.string(),
+    address_3:z.string(),
   });
 
   const form = useForm<z.infer<typeof formScehma>>({
@@ -105,6 +108,9 @@ const ProfileForm = () => {
       country: "",
       address_1: "",
       pincode: "",
+      age:"",
+      address_2:"",
+      address_3:"",
     },
   });
   const onSubmit = (values: z.infer<typeof formScehma>) => {
@@ -467,7 +473,7 @@ const ProfileForm = () => {
                                 optionSelectedColor: "#672013",
                                 colorBorder: "none",
                                 colorText: "#672013",
-                                fontSize: "20px",
+                                fontSize: 20,
                                 paddingXS: 10,
                                 optionPadding: "8px",
                                 borderRadius: 12,
@@ -550,7 +556,7 @@ const ProfileForm = () => {
                                 optionSelectedColor: "#672013",
                                 colorBorder: "none",
                                 colorText: "#672013",
-                                fontSize: "20px",
+                                fontSize: 20,
                                 paddingXS: 10,
                                 optionPadding: "8px",
                                 borderRadius: 12,

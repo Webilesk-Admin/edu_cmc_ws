@@ -7,7 +7,7 @@ const page = () => {
   return (
     <>
       <div className="">
-        <Header UserType={"user"} />
+        <Header  ActiveLink="0" UserType={"user"} Color={""} />
         <div className="flex flex-col gap-[10px] items-center h-[80vh] justify-center mt-[60px] md:mt-[110px]">
           <div className="w-[90%] bg-[#D32828] h-[263px] rounded-[24px] max-w-[633px] lg:min-w-[633px] flex flex-col items-center justify-center gap-[5px] ">
             <Image src={BigIcon} alt="" className="max-w-[50px]" />

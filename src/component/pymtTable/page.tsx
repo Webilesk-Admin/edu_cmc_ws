@@ -153,29 +153,9 @@ const onChange: TableProps<DataType>["onChange"] = (
   // console.log("params", pagination, filters, sorter, extra);
 };
 
-const Page = ({ Page }) => (
+const Page = () => (
   <div className="w-[100%] bg-transparent">
-    <ConfigProvider
-      theme={{
-        components: {
-          Table: {
-            cellFontSize: 12,
-            headerBg: "#fff",
-          },
-        },
-      }}
-    >
-      <Table
-        className="max-w-[100%]"
-        columns={columns}
-        dataSource={data}
-        rowClassName={(record, index) =>
-          record.Status == "1" ? "success" : "error"
-        }
-        onChange={onChange}
-        pagination={{ pageSize: Page }}
-      />
-    </ConfigProvider>
+   
   </div>
 );
 

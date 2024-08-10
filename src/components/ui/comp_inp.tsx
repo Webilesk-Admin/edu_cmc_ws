@@ -1,11 +1,9 @@
-import { fork } from "child_process";
 import React from "react";
-import { Form, useForm, FieldPath, Control } from "react-hook-form";
+import { FieldPath, Control } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import { FilePath } from "tailwindcss/types/config";
 import {
   FormControl,
   FormDescription,
@@ -13,21 +11,30 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from ".
+} from "../ui/form"; // Ensure this path is correct
 
-interface loginFormFieldProps {
-  name: FieldPath<z.infer<typeof formScehma>>;
+// Define formSchema with Zod (or import it if it's defined elsewhere)
+const formSchema = z.object({
+  // Define schema fields here
+});
+
+// Define the type for form values
+type FormValues = z.infer<typeof formSchema>;
+
+interface LoginFormFieldProps {
+  name: FieldPath<FormValues>;
   label: string;
   placeholder: string;
-  description: string;
-  inputType: string;
-  formControl: Control<z.infer<typeof formScehma>, any>;
+  description?: string; // Make description optional
+  inputType?: string; // Make inputType optional
+  formControl: Control<FormValues>;
 }
-const loginFormField: React.FC<loginFormFieldProps> = ({
+
+const LoginFormField: React.FC<LoginFormFieldProps> = ({
   name,
   label,
   placeholder,
-  inputType,
+  inputType = "text", // Default value for inputType
   formControl,
   description,
 }) => {
@@ -40,10 +47,10 @@ const loginFormField: React.FC<loginFormFieldProps> = ({
           <FormLabel>{label}</FormLabel>
           <FormControl>
             <Input
-              type={inputType || "text"}
+              type={inputType}
               placeholder={placeholder}
               {...field}
-            ></Input>
+            />
           </FormControl>
           {description && <FormDescription>{description}</FormDescription>}
           <FormMessage />
@@ -52,3 +59,5 @@ const loginFormField: React.FC<loginFormFieldProps> = ({
     />
   );
 };
+
+export default LoginFormField;

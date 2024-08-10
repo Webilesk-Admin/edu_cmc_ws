@@ -10,7 +10,7 @@ import Link from "next/link";
 
 interface HeaderProps {
   Color: string;
-  ActiveLink: number;
+  ActiveLink: string;
   UserType?: string;
 }
 
@@ -52,19 +52,19 @@ const Header: React.FC<HeaderProps> = ({ Color, ActiveLink, UserType }) => {
               className={`text-${fixed ? 'black' : Color} text-20 font-600 flex gap-6 lg:gap-10`}
             >
               <Link href="/">
-                <p className={`cursor-pointer ${ActiveLink === 1 ? "text-[#F9AB70]" : ""}`}>Home</p>
+                <p className={`cursor-pointer ${ActiveLink === "1" ? "text-[#F9AB70]" : ""}`}>Home</p>
               </Link>
               <Link href="/courseCategory">
-                <p className={`cursor-pointer ${ActiveLink === 2 ? "text-[#F9AB70]" : ""}`}>Courses</p>
+                <p className={`cursor-pointer ${ActiveLink === "2" ? "text-[#F9AB70]" : ""}`}>Courses</p>
               </Link>
               <Link href="/about">
-                <p className={`cursor-pointer ${ActiveLink === 3 ? "text-[#F9AB70]" : ""}`}>About us</p>
+                <p className={`cursor-pointer ${ActiveLink === "3" ? "text-[#F9AB70]" : ""}`}>About us</p>
               </Link>
               <Link href="/testimonial-public">
-                <p className={`cursor-pointer ${ActiveLink === 4 ? "text-[#F9AB70]" : ""}`}>Testimonials</p>
+                <p className={`cursor-pointer ${ActiveLink === "4" ? "text-[#F9AB70]" : ""}`}>Testimonials</p>
               </Link>
               <Link href="/contact">
-                <p className={`cursor-pointer ${ActiveLink === 5 ? "text-[#F9AB70]" : ""}`}>Contact</p>
+                <p className={`cursor-pointer ${ActiveLink === "5" ? "text-[#F9AB70]" : ""}`}>Contact</p>
               </Link>
             </div>
             <div className="flex items-center justify-center gap-5">

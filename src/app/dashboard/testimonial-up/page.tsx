@@ -5,23 +5,21 @@ import { Header, DashboardComp, TesimonialUserPhase } from "@/component";
 import TopImg from "@/asset/cmc_dashboard_testimonial_top_quote.png";
 import BottomImg from "@/asset/cmc_dashboard_testimonial_bottom_quote.png";
 import Image from "next/image";
-import ReactStars from "react-rating-stars-component";
+// import ReactStars from "react-rating-stars-component";
 import Star from "@/asset/cmc_dashboard_testimonial_blkur_star.png";
 import FillStar from "@/asset/cmc_dashboard_testimonial_color_star.png";
 import BottomImage from "@/asset/cmc_dashboard_testimonial_image.png";
 
 const Page = () => {
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
+ 
 
   return (
     <div>
-      <Header UserType="user" ActiveLink={0} Color="" />
+      <Header UserType="user" ActiveLink={"0"} Color="" />
       <div className="flex justify-center items-start w-full mt-[60px] md:mt-[110px] h-[80vh]">
         <div className="w-full 2xl:w-[87%] flex md:gap-[30px] relative">
           <div className="sticky top-[110px] z-10">
-            <DashboardComp DashCount={7} />
+            {/* <DashboardComp DashCount={7} /> */}
             <Image
               src={BottomImage}
               alt=""
@@ -52,7 +50,7 @@ const Page = () => {
                   />
                 </div>
                 <div className="">
-                  <ReactStars
+                  {/* <ReactStars
                     count={5}
                     onChange={ratingChanged}
                     size={24}
@@ -72,7 +70,7 @@ const Page = () => {
                       />
                     }
                     activeColor="#ffd700"
-                  />
+                  /> */}
                 </div>
                 <button className="w-[173px] h-[45px] flex items-center justify-center text-[#ffffff] text-[20px] font-[700] bg-[#F9AB70] rounded-[10px]">
                   Submit

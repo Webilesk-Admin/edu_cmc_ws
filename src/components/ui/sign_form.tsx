@@ -44,7 +44,7 @@ const ProfileForm = () => {
   let [showCpassword, setShowCpassword] = useState<boolean>(false);
   let [showPassword, setShowPassword] = useState<boolean>(false);
   const [date, setDate] = useState<Date | undefined>(undefined);
-  console.log(new Date(date).getTime());
+  
 
   const showCpass = () => {
     setShowCpassword(!showCpassword);
@@ -55,9 +55,9 @@ const ProfileForm = () => {
   const onSubmit = (values: z.infer<typeof formScehma>) => {
     console.log(values);
   };
-  const checkboxed = (value) => {
-    setCheck(value);
-  };
+  // const checkboxed = (value) => {
+  //   setCheck(value);
+  // };
   const formScehma = z.object({
     name: z
       .string()
@@ -162,7 +162,7 @@ const ProfileForm = () => {
           <div className="flex flex-col md:flex-row gap-[40px] md:gap-[20px] md:ml-[10px]">
             <RadioGroup.Root
               className="flex  gap-2.5 ml-[10px] w-[234px] "
-              onValueChange={checkboxed}
+              // onValueChange={checkboxed}
             >
               <div className="flex items-center">
                 <RadioGroup.Item

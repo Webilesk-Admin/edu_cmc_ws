@@ -6,7 +6,7 @@ var nameRegex = /^[a-zA-Z ]+$/;
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 import {
   Form,
   FormControl,
@@ -30,6 +30,7 @@ const formScehma = z.object({
     .min(1, { message: "Enter Mobile No" })
     .regex(mobileRegex, { message: "Invalid Mobile No" }),
   email: z.string().min(1, { message: "Enter Email" }).email("Invalid Email"),
+  text_area:z.string()
 });
 
 const ProfileForm = () => {
@@ -41,6 +42,7 @@ const ProfileForm = () => {
       mobile: "",
       email: "",
       text_area: "",
+   
     },
   });
   let [captacha, setCaptcha] = useState<string | null>();
@@ -52,7 +54,7 @@ const ProfileForm = () => {
     <div className="flex items-center justify-center flex-col gap-[0px] w-[100%]">
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(onSubmit)}
+          // onSubmit={form.handleSubmit(onSubmit)}
           className="flex flex-col gap-[5px] w-[90%] ml-[10px]"
         >
           <FormField
@@ -145,10 +147,10 @@ const ProfileForm = () => {
             )}
           />
           <div className="mt-[10px]">
-            <ReCAPTCHA
+            {/* <ReCAPTCHA
               sitekey="6Lej3xgqAAAAAEb259LUdnM_icwCWriQ3cAdMi7R"
               onChange={setCaptcha}
-            />
+            /> */}
           </div>
           <button
             type="submit"

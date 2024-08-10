@@ -7,7 +7,8 @@ const page = () => {
   return (
     <>
       <div className="flex items-center justify-center flex-col ]">
-        <Header Color={"#7E7E7E"} />
+        
+        <Header  ActiveLink="0" UserType={"user"} Color={"#7E7E7E"} />
         <div className="min-h-[169px] bg-[#fbcba6] min-w-[100%] mt-[68px] md:mt-[80px]  flex items-center justify-center p-[10px] md:p-[0px] course-ban">
           <div className=" min-w-[80%]">
             <p className="text-[26px] max-w-[478px] font-[600]">

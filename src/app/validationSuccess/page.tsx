@@ -14,7 +14,7 @@ const page = () => {
   return (
     <>
       <div className="login-form h-[100vh] min-w-[100%]">
-        <Header Color={"#fff"} UserType={"user"} />
+        <Header Color={"#fff"} UserType={"user"} ActiveLink="0" />
         <div className=" flex items-center justify-center mt-[60px] w-[100%] md:max-w-[90%]  h-[100vh] ">
           <div className="  w-[95%] xl:w-[1066px] md:h-[568px] py-[20px] lg:min-h-[568px] flex flex-col items-center justify-center gap-[20px] m-[10px] lg:ml-[80px] glass-morph mt-[50px] md:mt-[0px]">
             <div className="flex flex-col md:flex-row items-center justify-between xl:w-[750px] w-[80%]">
